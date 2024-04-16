@@ -1,16 +1,11 @@
-# unibg_pokemon
+# UniBG Pokédex with Flutter
 
-A new Flutter project.
+## 💎 Contributing
 
-## Getting Started
+If you have any idea, feel free to fork it and submit your changes back to me.
 
-This project is a starting point for a Flutter application.
+## 📋 License
 
-A few resources to get you started if this is your first Flutter project:
+Wassword is released under the [MIT license](LICENSE.md). You can use the code for any purpose, including commercial projects.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
