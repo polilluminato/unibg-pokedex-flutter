@@ -1,27 +1,22 @@
-class Pokemon {
-  final String name;
-  final int height;
-  final int weight;
-  final String imageLink;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:unibg_pokemon/models/pokemon_sprite.dart';
+import 'package:unibg_pokemon/models/pokemon_stat_item.dart';
+import 'package:unibg_pokemon/models/pokemon_type_item.dart';
 
-  Pokemon(
-      {required this.name,
-      required this.height,
-      required this.weight,
-      required this.imageLink});
+part 'pokemon.freezed.dart';
+part 'pokemon.g.dart';
 
-  factory Pokemon.fromJson(Map<String, dynamic> data) {
-    //I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
-    //  lettera maiuscola: bulbasaur -> Bulbasaur
-    String nameFromApi = data['name'] as String;
-    final name =
-        nameFromApi[0].toUpperCase() + nameFromApi.substring(1).toLowerCase();
+@freezed
+class Pokemon with _$Pokemon {
+  const factory Pokemon({
+    required String name,
+    required int height,
+    required int weight,
+    required PokemonSprite sprites,
+    required List<PokemonTypeItem> types,
+    required List<PokemonStatItem> stats,
+  }) = _Pokemon;
 
-    final height = data['height'] as int;
-    final weight = data['weight'] as int;
-    final imageLink =
-        data['sprites']['other']['official-artwork']['front_default'] as String;
-    return Pokemon(
-        name: name, height: height, weight: weight, imageLink: imageLink);
-  }
+  factory Pokemon.fromJson(Map<String, Object?> json) =>
+      _$PokemonFromJson(json);
 }

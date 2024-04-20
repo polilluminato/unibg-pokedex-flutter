@@ -21,10 +21,13 @@ class SinglePokemonPage extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
               Pokemon myPokemon = snapshot.data!;
+
+              print(myPokemon.toJson());
+
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    Image.network(myPokemon.imageLink),
+                    Image.network(myPokemon.sprites.frontDefault),
                     Text(
                       myPokemon.name,
                       style: textTheme.displayMedium,

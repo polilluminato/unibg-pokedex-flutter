@@ -32,14 +32,19 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.5.1
+  freezed_annotation: ^2.4.1
   http: ^1.2.1
+  json_annotation: ^4.8.1
   window_manager: ^0.3.8
 
 dev_dependencies:
+  build_runner: ^2.4.9
   custom_lint: ^0.6.4
   flutter_lints: ^3.0.0
   flutter_test:
     sdk: flutter
+  freezed: ^2.5.2
+  json_serializable: ^6.7.1
   riverpod_lint: ^2.3.10
 
 # For information on the generic Dart part of this file, see the

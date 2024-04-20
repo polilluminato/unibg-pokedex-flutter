@@ -4,10 +4,14 @@ class PokemonItem {
   int? id;
   String? imageLink;
 
-  PokemonItem({required this.name, required this.url, this.id, this.imageLink,});
+  PokemonItem({
+    required this.name,
+    required this.url,
+    this.id,
+    this.imageLink,
+  });
 
   factory PokemonItem.fromJson(Map<String, dynamic> data) {
-
     String url = data['url'] as String;
     String mameFromApi = data['name'] as String;
     //I nomi mi arrivano tutti in lowercase, in questo modo metto la prima
@@ -21,7 +25,7 @@ class PokemonItem {
     //  componendo il link in questo modo:
     //  - https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png
     String imageLink =
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png";
 
     return PokemonItem(name: name, url: url, id: id, imageLink: imageLink);
   }
