@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon_item.dart';
+import 'package:unibg_pokemon/pages/singlepokemon_page.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -25,11 +26,22 @@ class _MyHomePageState extends State<MyHomePage> {
               return ListView.builder(
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
+
+                  PokemonItem thisPokemon = snapshot.data![index];
+
                   return ListTile(
-                    title: Text(snapshot.data![index].name),
+                    title: Text(thisPokemon.name),
                     leading: Image.network(
-                      snapshot.data![index].imageLink!,
+                      thisPokemon.imageLink!,
                       width: 50,
+                    ),
+                    onTap: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SinglePokemonPage(
+                          pokemonId: thisPokemon.id!,
+                        ),
+                      ),
                     ),
                   );
                 },
