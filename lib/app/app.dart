@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/pages/home_page.dart';
+import 'package:unibg_pokemon/pages/home/home_page.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           centerTitle: true,
         ),
       ),
-      home: const MyHomePage(),
+      home: const HomePage(),
     );
   }
 }

@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/app/app.dart';
 import 'package:window_manager/window_manager.dart';
 
@@ -24,5 +25,9 @@ void main() async {
     });
   }
 
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      child: App(),
+    ),
+  );
 }
