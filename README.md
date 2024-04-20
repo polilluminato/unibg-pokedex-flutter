@@ -1,5 +1,7 @@
 # UniBG Pokédex with Flutter
 
+This repository contains the source code of the demo Pokédex application that I made for the lecture given for the [Scuola di Ingegneria](https://www.unibg.it/embed-ingegneria/strutture-scuola-ingegneria) at the [University of Bergamo](https://www.unibg.it/). The application allows users to view the top 9 Pokémon in both list and grid format, navigate to their dedicated page, and view statistics.
+
 ### 📱 Screenshots
 
 | Home List                            | Home Grid                            | Single Page                            |
