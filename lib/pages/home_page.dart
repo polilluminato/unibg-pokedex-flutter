@@ -20,7 +20,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: FutureBuilder<List<PokemonItem>?>(
         future: PokemonRepository().getPokemonList(),
-        builder: (context, snapshot) {
+        builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
               return ListView.builder(

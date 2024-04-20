@@ -17,20 +17,26 @@ class SinglePokemonPage extends StatelessWidget {
       ),
       body: FutureBuilder<Pokemon>(
         future: PokemonRepository().getSinglePokemon(pokemonId),
-        builder: (BuildContext ctx, AsyncSnapshot<Pokemon> snapshot) {
-          if (snapshot.hasData) {
-            Pokemon myPokemon = snapshot.data!;
-            return SingleChildScrollView(
-              child: Column(
-                children: [
-                  Image.network(myPokemon.imageLink),
-                  Text(
-                    myPokemon.name,
-                    style: textTheme.displayMedium,
-                  ),
-                ],
-              ),
-            );
+        builder: (_, AsyncSnapshot<Pokemon> snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if (snapshot.hasData) {
+              Pokemon myPokemon = snapshot.data!;
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    Image.network(myPokemon.imageLink),
+                    Text(
+                      myPokemon.name,
+                      style: textTheme.displayMedium,
+                    ),
+                  ],
+                ),
+              );
+            } else {
+              return const Center(
+                child: Text("Errore"),
+              );
+            }
           } else {
             return const Center(
               child: CircularProgressIndicator(),
