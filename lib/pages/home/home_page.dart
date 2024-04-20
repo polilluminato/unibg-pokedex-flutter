@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/models/home_tab_model.dart';
-import 'package:unibg_pokemon/models/pokemon_item.dart';
 import 'package:unibg_pokemon/pages/home/tabs/grid_tab.dart';
 import 'package:unibg_pokemon/pages/home/tabs/list_tab.dart';
-import 'package:unibg_pokemon/pages/singlepokemon_page.dart';
-import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 
 final indexTabProvider = StateProvider<int>((ref) => 0);
 
@@ -40,10 +37,10 @@ class HomePage extends ConsumerWidget {
         destinations: tabList
             .map(
               (singleScreenTab) => NavigationDestination(
-            icon: Icon(singleScreenTab.icon),
-            label: singleScreenTab.label,
-          ),
-        )
+                icon: Icon(singleScreenTab.icon),
+                label: singleScreenTab.label,
+              ),
+            )
             .toList(),
       ),
     );

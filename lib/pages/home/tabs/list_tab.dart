@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon_item.dart';
-import 'package:unibg_pokemon/pages/singlepokemon_page.dart';
+import 'package:unibg_pokemon/pages/home/ui/card_list_view.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 
 class ListTab extends StatelessWidget {
@@ -16,24 +16,7 @@ class ListTab extends StatelessWidget {
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-
-                PokemonItem thisPokemon = snapshot.data![index];
-
-                return ListTile(
-                  title: Text(thisPokemon.name),
-                  leading: Image.network(
-                    thisPokemon.imageLink!,
-                    width: 50,
-                  ),
-                  onTap: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => SinglePokemonPage(
-                        pokemonId: thisPokemon.id!,
-                      ),
-                    ),
-                  ),
-                );
+                return CardListView(thisPokemon: snapshot.data![index]);
               },
             );
           } else {
