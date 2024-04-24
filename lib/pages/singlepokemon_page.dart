@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
+import 'package:unibg_pokemon/utils/string_extensions.dart';
 
 class SinglePokemonPage extends StatelessWidget {
   const SinglePokemonPage({super.key, required this.pokemonId});
@@ -30,7 +31,7 @@ class SinglePokemonPage extends StatelessWidget {
                     Image.network(
                         myPokemon.sprites.other.officialArtwork.frontDefault),
                     Text(
-                      myPokemon.name,
+                      myPokemon.name.capitalize(),
                       style: textTheme.displayMedium,
                     ),
                   ],
