@@ -27,7 +27,8 @@ class SinglePokemonPage extends StatelessWidget {
               return SingleChildScrollView(
                 child: Column(
                   children: [
-                    Image.network(myPokemon.sprites.frontDefault),
+                    Image.network(
+                        myPokemon.sprites.other.officialArtwork.frontDefault),
                     Text(
                       myPokemon.name,
                       style: textTheme.displayMedium,

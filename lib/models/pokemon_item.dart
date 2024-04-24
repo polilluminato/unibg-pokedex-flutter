@@ -21,11 +21,8 @@ class PokemonItem {
     //Link fatto come https://pokeapi.co/api/v2/pokemon/5/
     //  vado a prenderne id alla fine
     int id = int.parse(url.substring(url.length - 2, url.length - 1));
-    //Basandosi sull'API per il singolo pokemon l'immagine può essere ottenuta
-    //  componendo il link in questo modo:
-    //  - https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{id}.png
     String imageLink =
-        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$id.png";
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
 
     return PokemonItem(name: name, url: url, id: id, imageLink: imageLink);
   }
