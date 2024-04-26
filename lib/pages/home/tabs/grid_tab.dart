@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon_item.dart';
-import 'package:unibg_pokemon/pages/home/ui/card_grid_view.dart';
+import 'package:unibg_pokemon/pages/home/ui/card_view.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 
 class GridTab extends StatelessWidget {
@@ -16,13 +16,14 @@ class GridTab extends StatelessWidget {
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 3,
-                mainAxisSpacing: 8.0,
-                crossAxisSpacing: 8.0,
+                childAspectRatio: 1.2,
               ),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return CardGridView(thisPokemon: snapshot.data![index]);
+                return CardView(
+                  thisPokemon: snapshot.data![index],
+                  type: "grid",
+                );
               },
             );
           } else {
