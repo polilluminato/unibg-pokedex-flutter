@@ -21,9 +21,9 @@ dart run build_runner build --delete-conflicting-outputs
 
 ## 📱 Screenshots
 
-| Home List                            | Home Grid                            | Single Page                            |
-|--------------------------------------|--------------------------------------|----------------------------------------|
-| <img src="screenshots/home_list.jpg"> | <img src="screenshots/home_grid.jpg"> | <img src="screenshots/single_page.jpg"> |
+| Home List | Home Grid | Single Page (1) | Single Page (2) | 
+|-|-|-|-|
+| <img src="screenshots/home_list.jpg"> | <img src="screenshots/home_grid.jpg"> | <img src="screenshots/single_page_1.jpg"> | <img src="screenshots/single_page_2.jpg"> |
 
 ## 💎 Contributing
 
