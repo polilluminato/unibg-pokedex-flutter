@@ -1,6 +1,9 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
+import 'package:unibg_pokemon/pages/home/ui/carousel_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/divider_view.dart';
+import 'package:unibg_pokemon/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
@@ -9,6 +12,11 @@ class SinglePokemonPage extends StatelessWidget {
   const SinglePokemonPage({super.key, required this.pokemonId});
 
   final int pokemonId;
+
+  void _playCry(String url) async {
+    final player = AudioPlayer();
+    player.play(UrlSource(url));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,16 +33,18 @@ class SinglePokemonPage extends StatelessWidget {
             if (snapshot.hasData) {
               Pokemon myPokemon = snapshot.data!;
 
-              //print(myPokemon.toJson());
-
               return SingleChildScrollView(
                 padding: const EdgeInsets.all(Dimens.mainPadding),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Image.network(
-                      myPokemon.sprites.other.officialArtwork.frontDefault,
+                    Center(
+                      child: Image.network(
+                        myPokemon.sprites.other.officialArtwork.frontDefault,
+                      ),
                     ),
+                    ImagesRow(myPokemon: myPokemon),
+                    const CustomDivider(),
                     Text(
                       myPokemon.name.capitalize(),
                       style: textTheme.displayMedium,
@@ -61,7 +71,9 @@ class SinglePokemonPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const CustomDivider(),
+                    const SizedBox(
+                      height: Dimens.mainSpace,
+                    ),
                     Text(
                       "Statistiche",
                       style: textTheme.titleLarge,
@@ -98,7 +110,7 @@ class SinglePokemonPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () => _playCry(myPokemon.cries.legacy),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Legacy"),
                         ),
@@ -106,12 +118,23 @@ class SinglePokemonPage extends StatelessWidget {
                           width: Dimens.mainSpace,
                         ),
                         ElevatedButton.icon(
-                          onPressed: () {},
+                          onPressed: () => _playCry(myPokemon.cries.latest),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Latest"),
                         )
                       ],
-                    )
+                    ),
+                    const CustomDivider(),
+                    Text(
+                      "Slideshow",
+                      style: textTheme.titleLarge,
+                    ),
+                    const SizedBox(
+                      height: Dimens.mainSpace,
+                    ),
+                    CarouselView(
+                      myPokemon: myPokemon,
+                    ),
                   ],
                 ),
               );

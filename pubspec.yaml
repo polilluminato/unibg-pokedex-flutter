@@ -28,6 +28,8 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  audioplayers: ^6.0.0
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.6
   flutter:
     sdk: flutter
