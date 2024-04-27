@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:unibg_pokemon/models/pokemon_cry.dart';
 import 'package:unibg_pokemon/models/pokemon_sprite.dart';
 import 'package:unibg_pokemon/models/pokemon_stat_item.dart';
 import 'package:unibg_pokemon/models/pokemon_type_item.dart';
@@ -15,6 +16,7 @@ class Pokemon with _$Pokemon {
     required PokemonSprite sprites,
     required List<PokemonTypeItem> types,
     required List<PokemonStatItem> stats,
+    required PokemonCry cries,
   }) = _Pokemon;
 
   factory Pokemon.fromJson(Map<String, Object?> json) =>
