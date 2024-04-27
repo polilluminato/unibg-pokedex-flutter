@@ -16,7 +16,7 @@ Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.i
 I used [freezed](https://pub.dev/packages/freezed) to handle the json responses coming back from the API, but the generated `*.freezed.dart` and `*.g.dart` files were not committed, so before starting the project you need to run `build_runner` in order to create them:
 
 ```sh
-$ dart pub run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 ## 📱 Screenshots
