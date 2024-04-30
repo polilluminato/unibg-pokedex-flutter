@@ -10,6 +10,7 @@ part 'pokemon.g.dart';
 @freezed
 class Pokemon with _$Pokemon {
   const factory Pokemon({
+    required int id,
     required String name,
     required int height,
     required int weight,

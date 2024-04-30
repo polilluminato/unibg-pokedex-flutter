@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
 import 'package:unibg_pokemon/pages/home/ui/carousel_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/divider_view.dart';
@@ -39,8 +40,11 @@ class SinglePokemonPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
-                      child: Image.network(
-                        myPokemon.sprites.other.officialArtwork.frontDefault,
+                      child: PinchZoom(
+                        maxScale: 2.5,
+                        child: Image.network(
+                          myPokemon.sprites.other.officialArtwork.frontDefault,
+                        ),
                       ),
                     ),
                     ImagesRow(myPokemon: myPokemon),
