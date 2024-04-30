@@ -9,7 +9,7 @@ class PokemonRepository {
 
   Future<List<PokemonItem>?> getPokemonList() async {
     var response = await http.get(
-      Uri.parse("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=9"),
+      Uri.parse("https://pokeapi.co/api/v2/pokemon/?offset=0&limit=151"),
       headers: {
         'Content-Type': 'application/json',
       },
