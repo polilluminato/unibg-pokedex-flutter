@@ -49,12 +49,21 @@ class SinglePokemonPage extends StatelessWidget {
                     ),
                     ImagesRow(myPokemon: myPokemon),
                     const CustomDivider(),
-                    Text(
-                      myPokemon.name.capitalize(),
-                      style: textTheme.displayMedium,
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          myPokemon.name.capitalize(),
+                          style: textTheme.displayMedium,
+                        ),
+                        Text(
+                          "#${myPokemon.id.toString()}",
+                          style: textTheme.headlineMedium,
+                        ),
+                      ],
                     ),
                     const SizedBox(
-                      height: Dimens.mainSpace,
+                      height: Dimens.hugeSpace,
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
@@ -68,9 +77,11 @@ class SinglePokemonPage extends StatelessWidget {
                           runSpacing: Dimens.smallPadding,
                           spacing: Dimens.smallPadding,
                           children: myPokemon.types
-                              .map((type) => Chip(
-                                    label: Text(type.type.name.capitalize()),
-                                  ))
+                              .map(
+                                (type) => Chip(
+                                  label: Text(type.type.name.capitalize()),
+                                ),
+                              )
                               .toList(),
                         )
                       ],
