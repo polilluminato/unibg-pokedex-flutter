@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/models/home_tab_model.dart';
 import 'package:unibg_pokemon/pages/home/tabs/grid_tab.dart';
 import 'package:unibg_pokemon/pages/home/tabs/list_tab.dart';
+import 'package:unibg_pokemon/pages/settings/settings_page.dart';
+import 'package:unibg_pokemon/styles/dimens.dart';
 
 final indexTabProvider = StateProvider<int>((ref) => 0);
 
@@ -27,6 +29,18 @@ class HomePage extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("UniBG Pokédex"),
+        actions: [
+          IconButton(
+            padding: const EdgeInsets.only(right: Dimens.mainPadding),
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SettingsPage(),
+              ),
+            ),
+            icon: const Icon(Icons.settings),
+          ),
+        ],
       ),
       body: tabList[ref.watch(indexTabProvider)].content,
       bottomNavigationBar: NavigationBar(
