@@ -81,6 +81,21 @@ class SettingsPage extends ConsumerWidget {
                 link:
                     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
               ),
+              const PokemonAccentButton(
+                color: Colors.brown,
+                link:
+                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+              ),
+              const PokemonAccentButton(
+                color: Colors.red,
+                link:
+                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
+              ),
+              const PokemonAccentButton(
+                color: Colors.grey,
+                link:
+                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png",
+              ),
             ],
           )
         ],
