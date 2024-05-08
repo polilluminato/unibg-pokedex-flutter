@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unibg_pokemon/pages/settings/theme_provider.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
@@ -8,39 +9,45 @@ class PokemonAccentButton extends ConsumerWidget {
   const PokemonAccentButton({
     super.key,
     required this.color,
-    required this.link,
+    required this.pokemonId,
   });
 
   final Color color;
-  final String link;
+  final int pokemonId;
 
   double getButtonWidth(BuildContext context) {
     return (getScreenWidth(context) -
             (Dimens.mainPadding * 2) -
             (Dimens.mainSpace * 3)) /
-        3.1;
+        3.6;
   }
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final acProvider = ref.watch(accentColorProvider);
-    double size = 32;
 
     return InkWell(
       onTap: () =>
           ref.read(accentColorProvider.notifier).update((state) => color),
       child: Container(
+        padding: const EdgeInsets.all(Dimens.smallPadding),
         decoration: BoxDecoration(
           border: Border.all(
-            width: size * .1,
+            width: Dimens.borderSideWidth,
             color: acProvider == color ? color : Colors.transparent,
           ),
-          borderRadius: BorderRadius.circular(size),
+          borderRadius: BorderRadius.circular(Dimens.smallRoundedCorner),
         ),
-        child: Image.network(
+        child: SvgPicture.network(
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/$pokemonId.svg",
           width: getButtonWidth(context),
-          link,
+          height: getButtonWidth(context),
         ),
+
+        /*Image.network(
+          width: getButtonWidth(context),
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png",
+        ),*/
       ),
     );
   }

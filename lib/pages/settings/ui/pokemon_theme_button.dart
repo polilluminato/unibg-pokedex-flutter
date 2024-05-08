@@ -1,12 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:unibg_pokemon/pages/settings/theme_provider.dart';
+import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class PokemonThemeButton extends ConsumerWidget {
-  const PokemonThemeButton({super.key, required this.isDark});
+  const PokemonThemeButton({
+    super.key,
+    required this.isDark,
+    required this.pokemonId,
+  });
 
   final bool isDark;
+  final int pokemonId;
 
   Color getBorderColor(Color acProvider, Brightness tProvider) {
     if (isDark) {
@@ -20,27 +27,33 @@ class PokemonThemeButton extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final acProvider = ref.watch(accentColorProvider);
     final tProvider = ref.watch(brightnessProvider);
-    double size = 32;
 
     return InkWell(
       onTap: () => ref
           .read(brightnessProvider.notifier)
           .update((state) => isDark ? Brightness.dark : Brightness.light),
       child: Container(
-          width: getScreenWidth(context) * .45,
-          decoration: BoxDecoration(
-            border: Border.all(
-              width: size * .1,
-              color: getBorderColor(acProvider, tProvider),
-            ),
-            borderRadius: BorderRadius.circular(10),
+        padding: const EdgeInsets.all(Dimens.smallPadding),
+        width: getScreenWidth(context) * .45,
+        decoration: BoxDecoration(
+          border: Border.all(
+            width: Dimens.borderSideWidth,
+            color: getBorderColor(acProvider, tProvider),
           ),
-          child: Image.network(
-            width: getScreenWidth(context) * .35,
-            isDark
-                ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/644.png"
-                : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/643.png",
-          )),
+          borderRadius: BorderRadius.circular(Dimens.smallRoundedCorner),
+        ),
+        child: SvgPicture.network(
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/$pokemonId.svg",
+          width: getScreenWidth(context) * .35,
+          height: getScreenWidth(context) * .35,
+        ),
+      ),
+      /*Image.network(
+          width: getScreenWidth(context) * .35,
+          isDark
+              ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png"
+              : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png",
+        ),*/
     );
   }
 }

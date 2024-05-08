@@ -21,4 +21,6 @@ class Dimens {
   static const double hugeSpace = 32;
   static const double mainSpace = 16;
   static const double smallSpace = 8;
+
+  static const double borderSideWidth = 3;
 }

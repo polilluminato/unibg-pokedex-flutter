@@ -30,9 +30,11 @@ class SettingsPage extends ConsumerWidget {
             children: [
               PokemonThemeButton(
                 isDark: false,
+                pokemonId: 643,
               ),
               PokemonThemeButton(
                 isDark: true,
+                pokemonId: 644,
               ),
             ],
           ),
@@ -53,48 +55,39 @@ class SettingsPage extends ConsumerWidget {
             children: [
               const PokemonAccentButton(
                 color: Colors.orange,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png",
+                pokemonId: 4,
               ),
               const PokemonAccentButton(
                 color: Colors.green,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png",
+                pokemonId: 1,
               ),
               const PokemonAccentButton(
                 color: Colors.lightBlue,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png",
+                pokemonId: 7,
               ),
               const PokemonAccentButton(
                 color: Colors.yellow,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png",
+                pokemonId: 25,
               ),
               const PokemonAccentButton(
                 color: Colors.purple,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/94.png",
+                pokemonId: 94,
               ),
               PokemonAccentButton(
                 color: Colors.pink[100]!,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/39.png",
+                pokemonId: 39,
               ),
               const PokemonAccentButton(
                 color: Colors.brown,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png",
+                pokemonId: 133,
               ),
               const PokemonAccentButton(
                 color: Colors.red,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/129.png",
+                pokemonId: 129,
               ),
               const PokemonAccentButton(
                 color: Colors.grey,
-                link:
-                    "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/111.png",
+                pokemonId: 111,
               ),
             ],
           )
