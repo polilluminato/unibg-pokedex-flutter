@@ -22,5 +22,7 @@ class Dimens {
   static const double mainSpace = 16;
   static const double smallSpace = 8;
 
-  static const double borderSideWidth = 3;
+  static const double mainBorderSideWidth = 3;
+  static const double smallBorderSideWidth = 2;
+  static const double tinyBorderSideWidth = 1;
 }

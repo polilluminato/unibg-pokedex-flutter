@@ -52,7 +52,7 @@ class CardView extends StatelessWidget {
         ),
         decoration: BoxDecoration(
           border: Border.all(
-            width: 1,
+            width: Dimens.smallBorderSideWidth,
             color: thisTheme.colorScheme.primary,
           ),
           borderRadius: const BorderRadius.all(

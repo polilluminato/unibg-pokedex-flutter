@@ -33,7 +33,7 @@ class PokemonAccentButton extends ConsumerWidget {
         padding: const EdgeInsets.all(Dimens.smallPadding),
         decoration: BoxDecoration(
           border: Border.all(
-            width: Dimens.borderSideWidth,
+            width: Dimens.mainBorderSideWidth,
             color: acProvider == color ? color : Colors.transparent,
           ),
           borderRadius: BorderRadius.circular(Dimens.smallRoundedCorner),

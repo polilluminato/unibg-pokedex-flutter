@@ -37,7 +37,7 @@ class PokemonThemeButton extends ConsumerWidget {
         width: getScreenWidth(context) * .45,
         decoration: BoxDecoration(
           border: Border.all(
-            width: Dimens.borderSideWidth,
+            width: Dimens.mainBorderSideWidth,
             color: getBorderColor(acProvider, tProvider),
           ),
           borderRadius: BorderRadius.circular(Dimens.smallRoundedCorner),
