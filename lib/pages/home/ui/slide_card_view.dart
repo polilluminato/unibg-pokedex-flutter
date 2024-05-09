@@ -4,6 +4,8 @@ import 'package:unibg_pokemon/models/pokemon_item.dart';
 import 'package:unibg_pokemon/pages/singlepokemon_page.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
+import 'package:unibg_pokemon/utils/utils.dart';
+import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 class SlideCardView extends StatelessWidget {
   const SlideCardView({super.key, required this.thisPokemon});
@@ -16,6 +18,39 @@ class SlideCardView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SliverWoltModalSheetPage pokemonBottomSheetWidget(
+      BuildContext modalSheetContext,
+      TextTheme textTheme,
+    ) {
+      return WoltModalSheetPage(
+        hasSabGradient: false,
+        topBarTitle: Text(
+          thisPokemon.name.capitalize(),
+          style: textTheme.titleLarge,
+        ),
+        isTopBarLayerAlwaysVisible: true,
+        trailingNavBarWidget: IconButton(
+          padding: const EdgeInsets.symmetric(
+            horizontal: Dimens.mainPadding,
+            vertical: Dimens.smallPadding,
+          ),
+          icon: const Icon(Icons.close),
+          onPressed: Navigator.of(modalSheetContext).pop,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(8, 8, 8, 16),
+          child: Hero(
+            tag: thisPokemon.id!,
+            child: Image.network(
+              thisPokemon.imageLink!,
+              width: getScreenWidth(context) * .8,
+              height: getScreenWidth(context) * .8,
+            ),
+          ),
+        ),
+      );
+    }
+
     return InkWell(
       onTap: () => Navigator.push(
         context,
@@ -30,11 +65,36 @@ class SlideCardView extends StatelessWidget {
           motion: const DrawerMotion(),
           children: [
             SlidableAction(
-              onPressed: (_) => doNothing("share"),
-              backgroundColor: Colors.blue,
+              onPressed: (_) {
+                WoltModalSheet.show<void>(
+                  context: context,
+                  pageListBuilder: (modalSheetContext) {
+                    return [
+                      pokemonBottomSheetWidget(
+                        modalSheetContext,
+                        Theme.of(context).textTheme,
+                      ),
+                    ];
+                  },
+                  modalTypeBuilder: (context) {
+                    final size = MediaQuery.of(context).size.width;
+                    if (size < 600) {
+                      return WoltModalType.bottomSheet;
+                    } else {
+                      return WoltModalType.dialog;
+                    }
+                  },
+                  onModalDismissedWithBarrierTap: Navigator.of(context).pop,
+                  maxDialogWidth: 560,
+                  minDialogWidth: 400,
+                  minPageHeight: 0.0,
+                  maxPageHeight: 0.9,
+                );
+              },
+              backgroundColor: Colors.green,
               foregroundColor: Colors.white,
-              icon: Icons.share,
-              label: 'Share',
+              icon: Icons.info_outline,
+              label: 'More Info',
             ),
           ],
         ),
@@ -76,7 +136,7 @@ class _InsideCard extends StatelessWidget {
       ),
       decoration: BoxDecoration(
         border: Border.all(
-          width: 1,
+          width: Dimens.smallBorderSideWidth,
           color: thisTheme.colorScheme.primary,
         ),
         borderRadius: const BorderRadius.all(
@@ -85,9 +145,12 @@ class _InsideCard extends StatelessWidget {
       ),
       child: Row(
         children: [
-          Image.network(
-            thisPokemon.imageLink!,
-            width: 50,
+          Hero(
+            tag: thisPokemon.id!,
+            child: Image.network(
+              thisPokemon.imageLink!,
+              width: 50,
+            ),
           ),
           const SizedBox(
             width: Dimens.mainSpace,
