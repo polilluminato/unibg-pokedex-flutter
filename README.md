@@ -21,9 +21,10 @@ dart run build_runner build --delete-conflicting-outputs
 
 ## 📱 Screenshots
 
-| Home List | Home Grid | Single Page (1) | Single Page (2) | 
-|-|-|-|-|
-| <img src="screenshots/home_list.jpg"> | <img src="screenshots/home_grid.jpg"> | <img src="screenshots/single_page_1.jpg"> | <img src="screenshots/single_page_2.jpg"> |
+| Home List | Home Grid | Single Page (1) | Single Page (2) | Settings |
+|-|-|-|-|-|
+| <img width="300" src="screenshots/home_list_light.jpg"> | <img width="300" src="screenshots/home_grid_light.jpg"> | <img width="300" src="screenshots/single_page_1_light.jpg"> | <img width="300" src="screenshots/single_page_2_light.jpg"> | <img width="300" src="screenshots/settings_light.jpg"> |
+| <img width="300" src="screenshots/home_list_dark.jpg"> | <img width="300" src="screenshots/home_grid_dark.jpg"> | <img width="300" src="screenshots/single_page_1_dark.jpg"> | <img width="300" src="screenshots/single_page_2_dark.jpg"> | <img width="300" src="screenshots/settings_dark.jpg"> |
 
 ## 💎 Contributing
 
@@ -34,3 +35,7 @@ If you have any idea, feel free to fork it and submit your changes back to me.
 UniBG Pokédex is released under the [MIT license](LICENSE.md). You can use the code for any purpose, including commercial projects.
 
 [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
+
+670 190 840 1800
