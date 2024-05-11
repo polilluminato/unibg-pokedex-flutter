@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
 import 'package:unibg_pokemon/pages/home/ui/carousel_view.dart';
@@ -10,13 +11,13 @@ import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
 
 class SinglePokemonPage extends StatelessWidget {
-  const SinglePokemonPage({super.key, required this.pokemonId});
+  SinglePokemonPage({super.key, required this.pokemonId});
 
   final int pokemonId;
+  final AudioPlayer _player = AudioPlayer();
 
   void _playCry(String url) async {
-    final player = AudioPlayer();
-    player.play(UrlSource(url));
+    _player.play(UrlSource(url));
   }
 
   @override
@@ -55,7 +56,7 @@ class SinglePokemonPage extends StatelessWidget {
                         Text(
                           myPokemon.name.capitalize(),
                           style: textTheme.displayMedium,
-                        ),
+                        ).animate().scale(),
                         Text(
                           "#${myPokemon.id.toString()}",
                           style: textTheme.headlineMedium,
@@ -70,7 +71,7 @@ class SinglePokemonPage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          "Tipo",
+                          "Type",
                           style: textTheme.titleLarge,
                         ),
                         Wrap(
@@ -90,7 +91,7 @@ class SinglePokemonPage extends StatelessWidget {
                       height: Dimens.mainSpace,
                     ),
                     Text(
-                      "Statistiche",
+                      "Statistics",
                       style: textTheme.titleLarge,
                     ),
                     ListView.builder(
@@ -114,7 +115,7 @@ class SinglePokemonPage extends StatelessWidget {
                     ),
                     const CustomDivider(),
                     Text(
-                      "Grido",
+                      "Cry",
                       style: textTheme.titleLarge,
                     ),
                     const SizedBox(
