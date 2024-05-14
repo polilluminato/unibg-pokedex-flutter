@@ -3,9 +3,8 @@
 <p align="center">
     <a href="https://dart.dev/"><img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"></a>
     <a href="https://flutter.dev/"><img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/licence-MIT-green?style=for-the-badge&"></a>
 </p>
-
-> Disclaimer: This repository is still under development and should not be considered a finished product. The code is subject to change and may not be complete or functioning properly.
 
 This repository contains the source code of the demo [Pokédex](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#Pok%C3%A9dex) (ポケモン図鑑, Pokémon Zukan, lit.: Pokémon Encyclopedia) application that I made for the lecture given for the [Scuola di Ingegneria](https://www.unibg.it/embed-ingegneria/strutture-scuola-ingegneria) at the [University of Bergamo](https://www.unibg.it/). The application allows users to view the top 9 Pokémon in both list and grid format, navigate to their dedicated page, and view statistics.
 
@@ -21,10 +20,15 @@ dart run build_runner build --delete-conflicting-outputs
 
 ## 📱 Screenshots
 
-| Home List | Home Grid | Single Page (1) | Single Page (2) | Settings |
-|-|-|-|-|-|
-| <img width="300" src="screenshots/home_list_light.jpg"> | <img width="300" src="screenshots/home_grid_light.jpg"> | <img width="300" src="screenshots/single_page_1_light.jpg"> | <img width="300" src="screenshots/single_page_2_light.jpg"> | <img width="300" src="screenshots/settings_light.jpg"> |
-| <img width="300" src="screenshots/home_list_dark.jpg"> | <img width="300" src="screenshots/home_grid_dark.jpg"> | <img width="300" src="screenshots/single_page_1_dark.jpg"> | <img width="300" src="screenshots/single_page_2_dark.jpg"> | <img width="300" src="screenshots/settings_dark.jpg"> |
+| Home List | Home Grid | Modal |
+|-|-|-|
+| <img width="300" src="screenshots/home_list_light.jpg"> | <img width="300" src="screenshots/home_grid_light.jpg"> | <img width="300" src="screenshots/modal_light.jpg"> | 
+| <img width="300" src="screenshots/home_list_dark.jpg"> | <img width="300" src="screenshots/home_grid_dark.jpg"> | <img width="300" src="screenshots/modal_dark.jpg"> | 
+
+| Single Page (1) | Single Page (2) | Settings |
+|-|-|-|
+| <img width="300" src="screenshots/single_page_top_light.jpg"> | <img width="300" src="screenshots/single_page_bottom_light.jpg"> | <img width="300" src="screenshots/settings_light.jpg"> | 
+| <img width="300" src="screenshots/single_page_top_dark.jpg"> | <img width="300" src="screenshots/single_page_bottom_dark.jpg"> | <img width="300" src="screenshots/settings_dark.jpg"> | 
 
 ## 💎 Contributing
 
@@ -35,7 +39,3 @@ If you have any idea, feel free to fork it and submit your changes back to me.
 UniBG Pokédex is released under the [MIT license](LICENSE.md). You can use the code for any purpose, including commercial projects.
 
 [![license](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-
-
-670 190 840 1800
