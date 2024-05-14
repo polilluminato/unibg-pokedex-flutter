@@ -12,8 +12,9 @@ class CardView extends StatelessWidget {
   List<Widget> _insideContainerList(ThemeData thisTheme) {
     return [
       Image.network(
-        thisPokemon.imageLink!,
+        thisPokemon.imagePng!,
         width: type == "list" ? 50 : 80,
+        height: type == "list" ? 50 : 80,
       ),
       const SizedBox(
         width: Dimens.mainSpace,

@@ -2,13 +2,15 @@ class PokemonItem {
   String name;
   String url;
   int? id;
-  String? imageLink;
+  String? imagePng;
+  String? imageSvg;
 
   PokemonItem({
     required this.name,
     required this.url,
     this.id,
-    this.imageLink,
+    this.imagePng,
+    this.imageSvg,
   });
 
   factory PokemonItem.fromJson(Map<String, dynamic> data) {
@@ -24,9 +26,12 @@ class PokemonItem {
     String numberString = match.group(1)!;
     int id = int.parse(numberString);
 
-    String imageLink =
+    String imagePng =
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
+    String imageSvg =
+        "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/$id.svg";
 
-    return PokemonItem(name: name, url: url, id: id, imageLink: imageLink);
+    return PokemonItem(
+        name: name, url: url, id: id, imagePng: imagePng, imageSvg: imageSvg);
   }
 }
