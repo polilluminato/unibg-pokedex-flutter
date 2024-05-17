@@ -10,7 +10,7 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'UniBG Pokédex',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           seedColor: ref.watch(accentColorProvider),
