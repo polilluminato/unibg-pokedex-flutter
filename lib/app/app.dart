@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/pages/home/home_page.dart';
+import 'package:unibg_pokemon/pages/settings/theme_provider.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
@@ -12,8 +13,8 @@ class App extends ConsumerWidget {
       title: 'UniBG Pokédex',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.red,
-          brightness: Brightness.light,
+          seedColor: ref.watch(accentColorProvider),
+          brightness: ref.watch(brightnessProvider),
         ),
         appBarTheme: const AppBarTheme(
           centerTitle: true,

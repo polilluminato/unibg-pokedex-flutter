@@ -5,9 +5,5 @@ class HomeTab {
   final IconData icon;
   final Widget content;
 
-  HomeTab({
-    required this.label,
-    required this.icon,
-    required this.content,
-  });
+  HomeTab({required this.label, required this.icon, required this.content});
 }

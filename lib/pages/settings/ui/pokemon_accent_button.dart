@@ -43,6 +43,11 @@ class PokemonAccentButton extends ConsumerWidget {
           width: getButtonWidth(context),
           height: getButtonWidth(context),
         ),
+
+        /*Image.network(
+          width: getButtonWidth(context),
+          "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png",
+        ),*/
       ),
     );
   }
