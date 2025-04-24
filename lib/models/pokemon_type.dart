@@ -4,7 +4,7 @@ part 'pokemon_type.freezed.dart';
 part 'pokemon_type.g.dart';
 
 @freezed
-class PokemonType with _$PokemonType {
+abstract class PokemonType with _$PokemonType {
   const factory PokemonType({
     required String name,
     required String url,

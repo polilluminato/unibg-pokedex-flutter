@@ -4,7 +4,7 @@ part 'pokemon_sprite_other_officialartwork.freezed.dart';
 part 'pokemon_sprite_other_officialartwork.g.dart';
 
 @freezed
-class PokemonSpriteOtherOfficialArtwork
+abstract class PokemonSpriteOtherOfficialArtwork
     with _$PokemonSpriteOtherOfficialArtwork {
   const factory PokemonSpriteOtherOfficialArtwork({
     @JsonKey(name: 'front_default') required String frontDefault,

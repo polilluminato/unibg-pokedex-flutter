@@ -5,7 +5,7 @@ part 'pokemon_sprite.freezed.dart';
 part 'pokemon_sprite.g.dart';
 
 @freezed
-class PokemonSprite with _$PokemonSprite {
+abstract class PokemonSprite with _$PokemonSprite {
   const factory PokemonSprite({
     @JsonKey(name: 'front_default') required String frontDefault,
     @JsonKey(name: 'front_shiny') required String frontShiny,

@@ -8,7 +8,7 @@ part 'pokemon_sprite_other.freezed.dart';
 part 'pokemon_sprite_other.g.dart';
 
 @freezed
-class PokemonSpriteOther with _$PokemonSpriteOther {
+abstract class PokemonSpriteOther with _$PokemonSpriteOther {
   const factory PokemonSpriteOther({
     @JsonKey(name: 'dream_world')
     required PokemonSpriteOtherDreamWorld dreamWorld,

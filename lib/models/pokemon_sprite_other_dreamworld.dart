@@ -4,7 +4,8 @@ part 'pokemon_sprite_other_dreamworld.freezed.dart';
 part 'pokemon_sprite_other_dreamworld.g.dart';
 
 @freezed
-class PokemonSpriteOtherDreamWorld with _$PokemonSpriteOtherDreamWorld {
+abstract class PokemonSpriteOtherDreamWorld
+    with _$PokemonSpriteOtherDreamWorld {
   const factory PokemonSpriteOtherDreamWorld({
     @JsonKey(name: 'front_default') required String frontDefault,
   }) = _PokemonSpriteOtherDreamWorld;

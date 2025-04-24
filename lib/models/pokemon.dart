@@ -8,7 +8,7 @@ part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';
 
 @freezed
-class Pokemon with _$Pokemon {
+abstract class Pokemon with _$Pokemon {
   const factory Pokemon({
     required int id,
     required String name,

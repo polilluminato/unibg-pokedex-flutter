@@ -4,7 +4,7 @@ part 'pokemon_cry.freezed.dart';
 part 'pokemon_cry.g.dart';
 
 @freezed
-class PokemonCry with _$PokemonCry {
+abstract class PokemonCry with _$PokemonCry {
   const factory PokemonCry({
     required String latest,
     required String legacy,
