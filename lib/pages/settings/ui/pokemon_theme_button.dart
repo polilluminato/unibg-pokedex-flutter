@@ -48,12 +48,6 @@ class PokemonThemeButton extends ConsumerWidget {
           height: getScreenWidth(context) * .35,
         ),
       ),
-      /*Image.network(
-          width: getScreenWidth(context) * .35,
-          isDark
-              ? "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png"
-              : "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$pokemonId.png",
-        ),*/
     );
   }
 }
