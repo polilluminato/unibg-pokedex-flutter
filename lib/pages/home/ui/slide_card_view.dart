@@ -79,16 +79,12 @@ class SlideCardView extends StatelessWidget {
                   modalTypeBuilder: (context) {
                     final size = MediaQuery.of(context).size.width;
                     if (size < 600) {
-                      return WoltModalType.bottomSheet;
+                      return WoltModalType.bottomSheet();
                     } else {
-                      return WoltModalType.dialog;
+                      return WoltModalType.dialog();
                     }
                   },
                   onModalDismissedWithBarrierTap: Navigator.of(context).pop,
-                  maxDialogWidth: 560,
-                  minDialogWidth: 400,
-                  minPageHeight: 0.0,
-                  maxPageHeight: 0.9,
                 );
               },
               backgroundColor: Colors.green,

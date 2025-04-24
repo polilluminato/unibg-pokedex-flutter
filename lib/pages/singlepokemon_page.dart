@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
-import 'package:unibg_pokemon/pages/home/ui/carousel_view.dart';
+import 'package:unibg_pokemon/pages/home/ui/carousel_slider_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/divider_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
@@ -148,7 +148,7 @@ class SinglePokemonPage extends StatelessWidget {
                     const SizedBox(
                       height: Dimens.mainSpace,
                     ),
-                    CarouselView(
+                    CarouselSliderView(
                       myPokemon: myPokemon,
                     ),
                   ],

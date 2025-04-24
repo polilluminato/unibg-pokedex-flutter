@@ -2,8 +2,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
 
-class CarouselView extends StatelessWidget {
-  const CarouselView({super.key, required this.myPokemon});
+class CarouselSliderView extends StatelessWidget {
+  const CarouselSliderView({super.key, required this.myPokemon});
 
   final Pokemon myPokemon;
 
