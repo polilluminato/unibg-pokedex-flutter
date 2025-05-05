@@ -54,39 +54,30 @@ class SettingsPage extends ConsumerWidget {
             runSpacing: Dimens.mainSpace,
             children: [
               const PokemonAccentButton(
-                color: Colors.orange,
                 pokemonId: 4,
               ),
               const PokemonAccentButton(
-                color: Colors.green,
                 pokemonId: 1,
               ),
               const PokemonAccentButton(
-                color: Colors.lightBlue,
                 pokemonId: 7,
               ),
               const PokemonAccentButton(
-                color: Colors.yellow,
                 pokemonId: 25,
               ),
               const PokemonAccentButton(
-                color: Colors.purple,
                 pokemonId: 94,
               ),
-              PokemonAccentButton(
-                color: Colors.pink[100]!,
+              const PokemonAccentButton(
                 pokemonId: 39,
               ),
               const PokemonAccentButton(
-                color: Colors.brown,
                 pokemonId: 133,
               ),
               const PokemonAccentButton(
-                color: Colors.red,
                 pokemonId: 129,
               ),
               const PokemonAccentButton(
-                color: Colors.grey,
                 pokemonId: 111,
               ),
             ],

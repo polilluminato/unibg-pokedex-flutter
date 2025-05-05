@@ -3,4 +3,4 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final brightnessProvider = StateProvider<Brightness>((ref) => Brightness.light);
 
-final accentColorProvider = StateProvider<Color>((ref) => Colors.orange);
+final accentColorProvider = StateProvider<Color>((ref) => Colors.transparent);
