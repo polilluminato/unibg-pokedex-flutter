@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/models/home_tab_model.dart';
-import 'package:unibg_pokemon/pages/home/tabs/grid_tab.dart';
-import 'package:unibg_pokemon/pages/home/tabs/list_tab.dart';
-import 'package:unibg_pokemon/pages/settings/settings_page.dart';
+import 'package:unibg_pokemon/presentation/pages/home/tabs/grid_tab.dart';
+import 'package:unibg_pokemon/presentation/pages/home/tabs/list_tab.dart';
+import 'package:unibg_pokemon/presentation/pages/settings/settings_page.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 
 final indexTabProvider = StateProvider<int>((ref) => 0);

@@ -5,8 +5,9 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/enums/colorType_enum.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
-import 'package:unibg_pokemon/pages/home/ui/divider_view.dart';
-import 'package:unibg_pokemon/pages/home/ui/images_row.dart';
+import 'package:unibg_pokemon/presentation/pages/home/ui/divider_view.dart';
+import 'package:unibg_pokemon/presentation/pages/home/ui/images_row.dart';
+import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
@@ -52,6 +53,18 @@ class SinglePokemonPage extends StatelessWidget {
                       ),
                     ),
                     ImagesRow(myPokemon: myPokemon),
+                    const CustomDivider(),
+                    FilledButton.icon(
+                      style: FilledButton.styleFrom(
+                        minimumSize: const Size.fromHeight(56),
+                      ),
+                      onPressed: () => modalAIView(
+                        context: context,
+                        pokemon: myPokemon,
+                      ),
+                      icon: const Icon(Icons.smart_toy),
+                      label: const Text("Ask AI"),
+                    ),
                     const CustomDivider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -153,9 +166,6 @@ class SinglePokemonPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: Dimens.mainSpace * 4,
-                    ),
                   ],
                 ),
               );
@@ -170,11 +180,6 @@ class SinglePokemonPage extends StatelessWidget {
             );
           }
         },
-      ),
-      floatingActionButton: FloatingActionButton.extended(
-        onPressed: () => {},
-        label: const Text("Ask to AI"),
-        icon: const Icon(Icons.smart_toy),
       ),
     );
   }

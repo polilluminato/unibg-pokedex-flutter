@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:unibg_pokemon/pages/home/home_page.dart';
-import 'package:unibg_pokemon/pages/settings/theme_provider.dart';
+import 'package:unibg_pokemon/presentation/pages/home/home_page.dart';
+import 'package:unibg_pokemon/presentation/pages/settings/theme_provider.dart';
 
 class App extends ConsumerWidget {
   const App({super.key});
