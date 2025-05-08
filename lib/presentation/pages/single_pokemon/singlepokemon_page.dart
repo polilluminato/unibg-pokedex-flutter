@@ -53,19 +53,22 @@ class SinglePokemonPage extends StatelessWidget {
                       ),
                     ),
                     ImagesRow(myPokemon: myPokemon),
-                    const CustomDivider(),
-                    FilledButton.icon(
-                      style: FilledButton.styleFrom(
-                        minimumSize: const Size.fromHeight(56),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                        vertical: Dimens.mainSpace,
                       ),
-                      onPressed: () => modalAIView(
-                        context: context,
-                        pokemon: myPokemon,
+                      child: FilledButton.icon(
+                        style: FilledButton.styleFrom(
+                          minimumSize: const Size.fromHeight(56),
+                        ),
+                        onPressed: () => modalAIView(
+                          context: context,
+                          pokemon: myPokemon,
+                        ),
+                        icon: const Icon(Icons.smart_toy),
+                        label: const Text("Ask AI"),
                       ),
-                      icon: const Icon(Icons.smart_toy),
-                      label: const Text("Ask AI"),
                     ),
-                    const CustomDivider(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

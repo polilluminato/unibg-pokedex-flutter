@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
+import 'package:unibg_pokemon/presentation/pages/single_pokemon/kprompts.dart';
+import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/loading_view.dart';
+import 'package:unibg_pokemon/service/ai_service.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 
@@ -14,7 +17,10 @@ Future<void> modalAIView({
       return [
         WoltModalSheetPage(
           navBarHeight: 48,
-          topBarTitle: Text("Pokémon AI Assistant"),
+          topBarTitle: Text(
+            "Pokémon AI Assistant",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           isTopBarLayerAlwaysVisible: true,
           trailingNavBarWidget: IconButton(
             padding: const EdgeInsets.all(Dimens.smallPadding),
@@ -27,8 +33,8 @@ Future<void> modalAIView({
               spacing: Dimens.smallSpace,
               mainAxisSize: MainAxisSize.min,
               children: [
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
@@ -36,8 +42,8 @@ Future<void> modalAIView({
                   },
                   child: const Text('Description'),
                 ),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
@@ -45,8 +51,8 @@ Future<void> modalAIView({
                   },
                   child: const Text('Opponent Up'),
                 ),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
@@ -54,8 +60,8 @@ Future<void> modalAIView({
                   },
                   child: const Text('Opponent Down'),
                 ),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
+                FilledButton(
+                  style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
@@ -70,19 +76,35 @@ Future<void> modalAIView({
         WoltModalSheetPage(
           id: "description",
           navBarHeight: 48,
-          topBarTitle: Text("Description"),
+          topBarTitle: Text(
+            "Description",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           isTopBarLayerAlwaysVisible: true,
           leadingNavBarWidget: IconButton(
             padding: const EdgeInsets.all(Dimens.smallPadding),
             icon: const Icon(Icons.arrow_back),
             onPressed: () => WoltModalSheet.of(context).showAtIndex(0),
           ),
-          child: const SizedBox.shrink(),
+          child: FutureBuilder(
+            future:
+                AiService().askToAi(kPromptPokemonDescription(pokemon.name)),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                return Text(snapshot.data!);
+              } else {
+                return const LoadingView();
+              }
+            },
+          ),
         ),
         WoltModalSheetPage(
           id: "opponent_up",
           navBarHeight: 48,
-          topBarTitle: Text("Opponent Up"),
+          topBarTitle: Text(
+            "Opponent Up",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           isTopBarLayerAlwaysVisible: true,
           leadingNavBarWidget: IconButton(
             padding: const EdgeInsets.all(Dimens.smallPadding),
@@ -94,7 +116,10 @@ Future<void> modalAIView({
         WoltModalSheetPage(
           id: "opponent_down",
           navBarHeight: 48,
-          topBarTitle: Text("Opponent Down"),
+          topBarTitle: Text(
+            "Opponent Down",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           isTopBarLayerAlwaysVisible: true,
           leadingNavBarWidget: IconButton(
             padding: const EdgeInsets.all(Dimens.smallPadding),
@@ -106,7 +131,10 @@ Future<void> modalAIView({
         WoltModalSheetPage(
           id: "team",
           navBarHeight: 48,
-          topBarTitle: Text("Team"),
+          topBarTitle: Text(
+            "Team",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
           isTopBarLayerAlwaysVisible: true,
           leadingNavBarWidget: IconButton(
             padding: const EdgeInsets.all(Dimens.smallPadding),
