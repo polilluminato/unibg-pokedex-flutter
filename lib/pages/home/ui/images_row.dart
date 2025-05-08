@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
@@ -7,8 +8,8 @@ class ImagesRow extends StatelessWidget {
 
   final Pokemon myPokemon;
 
-  Image _createImage(String url, double width) {
-    return Image.network(
+  ExtendedImage _createImage(String url, double width) {
+    return ExtendedImage.network(
       width: width,
       url,
     );
@@ -19,11 +20,10 @@ class ImagesRow extends StatelessWidget {
     double imageSize = getScreenWidth(context) * 0.2;
 
     return Row(
-      mainAxisSize: MainAxisSize.max,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        _createImage(myPokemon.sprites.frontDefault, imageSize),
-        _createImage(myPokemon.sprites.frontShiny, imageSize),
         _createImage(myPokemon.sprites.other.showdown.frontDefault, imageSize),
         _createImage(myPokemon.sprites.other.showdown.frontShiny, imageSize),
       ],

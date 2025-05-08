@@ -1,14 +1,16 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
+import 'package:unibg_pokemon/enums/colorType_enum.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
-import 'package:unibg_pokemon/pages/home/ui/carousel_slider_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/divider_view.dart';
 import 'package:unibg_pokemon/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
+import 'package:unibg_pokemon/utils/utils.dart';
 
 class SinglePokemonPage extends StatelessWidget {
   SinglePokemonPage({super.key, required this.pokemonId});
@@ -38,13 +40,14 @@ class SinglePokemonPage extends StatelessWidget {
               return SingleChildScrollView(
                 padding: const EdgeInsets.all(Dimens.mainPadding),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Center(
                       child: PinchZoom(
                         maxScale: 2.5,
-                        child: Image.network(
+                        child: ExtendedImage.network(
                           myPokemon.sprites.other.officialArtwork.frontDefault,
+                          width: getScreenWidth(context) * .5,
                         ),
                       ),
                     ),
@@ -80,7 +83,17 @@ class SinglePokemonPage extends StatelessWidget {
                           children: myPokemon.types
                               .map(
                                 (type) => Chip(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(
+                                      Dimens.hugeRoundedCorner,
+                                    ),
+                                  ),
                                   label: Text(type.type.name.capitalize()),
+                                  backgroundColor: hexToColor(
+                                      ColorType.fromName(type.type.name).color),
+                                  labelStyle: const TextStyle(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               )
                               .toList(),
@@ -137,19 +150,11 @@ class SinglePokemonPage extends StatelessWidget {
                           onPressed: () => _playCry(myPokemon.cries.latest),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Latest"),
-                        )
+                        ),
                       ],
                     ),
-                    const CustomDivider(),
-                    Text(
-                      "Slideshow",
-                      style: textTheme.titleLarge,
-                    ),
                     const SizedBox(
-                      height: Dimens.mainSpace,
-                    ),
-                    CarouselSliderView(
-                      myPokemon: myPokemon,
+                      height: Dimens.mainSpace * 4,
                     ),
                   ],
                 ),
@@ -165,6 +170,11 @@ class SinglePokemonPage extends StatelessWidget {
             );
           }
         },
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => {},
+        label: const Text("Ask to AI"),
+        icon: const Icon(Icons.smart_toy),
       ),
     );
   }

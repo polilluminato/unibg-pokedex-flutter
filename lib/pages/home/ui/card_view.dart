@@ -1,3 +1,4 @@
+import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon_item.dart';
 import 'package:unibg_pokemon/pages/singlepokemon_page.dart';
@@ -11,7 +12,7 @@ class CardView extends StatelessWidget {
 
   List<Widget> _insideContainerList(ThemeData thisTheme) {
     return [
-      Image.network(
+      ExtendedImage.network(
         thisPokemon.imagePng!,
         width: type == "list" ? 50 : 80,
         height: type == "list" ? 50 : 80,

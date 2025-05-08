@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon_item.dart';
-import 'package:unibg_pokemon/pages/home/ui/slide_card_view.dart';
+import 'package:unibg_pokemon/pages/home/ui/card_view.dart';
 import 'package:unibg_pokemon/repository/pokemon_repository.dart';
 
 class ListTab extends StatelessWidget {
@@ -16,13 +16,10 @@ class ListTab extends StatelessWidget {
             return ListView.builder(
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {
-                return SlideCardView(
+                return CardView(
                   thisPokemon: snapshot.data![index],
+                  type: "list",
                 );
-                // return CardView(
-                //   thisPokemon: snapshot.data![index],
-                //   type: "list",
-                // );
               },
             );
           } else {

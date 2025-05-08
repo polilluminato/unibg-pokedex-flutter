@@ -17,8 +17,6 @@ Here are the most interesting packages used in the development of the applicatio
 * [audioplayers](https://pub.dev/packages/audioplayers): A Flutter plugin to play multiple audio files simultaneously
 * [carousel_slider](https://pub.dev/packages/carousel_slider): A carousel slider widget, support infinite scroll and custom child widget
 * [flutter_animate](https://pub.dev/packages/flutter_animate): Add beautiful animated effects & builders in Flutter, via an easy, customizable, unified API
-* [flutter_slidable](https://pub.dev/packages/flutter_slidable): A Flutter implementation of slidable list item with directional slide actions that can be dismissed
-* [flutter_svg](https://pub.dev/packages/flutter_svg): An SVG rendering and widget library for Flutter, which allows painting and displaying Scalable Vector Graphics 1.1 files
 * [pinch_zoom](https://pub.dev/packages/pinch_zoom): A widget based on Flutter's new Interactive Viewer that makes picture pinch zoom, and return to its initial size and position when released
 * [window_manager](https://pub.dev/packages/window_manager): This plugin allows Flutter desktop apps to resizing and repositioning the window
 * [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet): This package provides a responsive modal with multiple pages, motion animation for page transitions, and scrollable content within each page
