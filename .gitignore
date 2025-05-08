@@ -45,3 +45,8 @@ app.*.map.json
 # Freezed file
 *.freezed.dart
 *.g.dart
+
+# Firebase Files
+firebase.json
+android/app/google-services.json
+firebase_options.dart
