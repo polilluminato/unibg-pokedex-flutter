@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/pokemon.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/kprompts.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/loading_view.dart';
-import 'package:unibg_pokemon/service/ai_service.dart';
+import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_description_view.dart';
+import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_opponent_view.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 
@@ -47,18 +46,20 @@ Future<void> modalAIView({
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    WoltModalSheet.of(context).showPageWithId("opponent_up");
+                    WoltModalSheet.of(context)
+                        .showPageWithId("pokemon_advantage");
                   },
-                  child: const Text('Opponent Up'),
+                  child: const Text('Pokémon Advantage'),
                 ),
                 FilledButton(
                   style: FilledButton.styleFrom(
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    WoltModalSheet.of(context).showPageWithId("opponent_down");
+                    WoltModalSheet.of(context)
+                        .showPageWithId("pokemon_disadvantage");
                   },
-                  child: const Text('Opponent Down'),
+                  child: const Text('Pokémon Disadvantage'),
                 ),
                 FilledButton(
                   style: FilledButton.styleFrom(
@@ -86,23 +87,13 @@ Future<void> modalAIView({
             icon: const Icon(Icons.arrow_back),
             onPressed: () => WoltModalSheet.of(context).showAtIndex(0),
           ),
-          child: FutureBuilder(
-            future:
-                AiService().askToAi(kPromptPokemonDescription(pokemon.name)),
-            builder: (context, snapshot) {
-              if (snapshot.hasData) {
-                return Text(snapshot.data!);
-              } else {
-                return const LoadingView();
-              }
-            },
-          ),
+          child: PokemonDescriptionView(pokemonName: pokemon.name),
         ),
         WoltModalSheetPage(
-          id: "opponent_up",
+          id: "pokemon_advantage",
           navBarHeight: 48,
           topBarTitle: Text(
-            "Opponent Up",
+            "Pokémon Advantage",
             style: Theme.of(context).textTheme.titleMedium,
           ),
           isTopBarLayerAlwaysVisible: true,
@@ -111,13 +102,13 @@ Future<void> modalAIView({
             icon: const Icon(Icons.arrow_back),
             onPressed: () => WoltModalSheet.of(context).showAtIndex(0),
           ),
-          child: const SizedBox.shrink(),
+          child: PokemonOpponentView(pokemonName: pokemon.name, isUp: true),
         ),
         WoltModalSheetPage(
-          id: "opponent_down",
+          id: "pokemon_disadvantage",
           navBarHeight: 48,
           topBarTitle: Text(
-            "Opponent Down",
+            "Pokémon Disadvantage",
             style: Theme.of(context).textTheme.titleMedium,
           ),
           isTopBarLayerAlwaysVisible: true,
@@ -126,7 +117,7 @@ Future<void> modalAIView({
             icon: const Icon(Icons.arrow_back),
             onPressed: () => WoltModalSheet.of(context).showAtIndex(0),
           ),
-          child: const SizedBox.shrink(),
+          child: PokemonOpponentView(pokemonName: pokemon.name, isUp: false),
         ),
         WoltModalSheetPage(
           id: "team",

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 
 Size getScreenSize(BuildContext context) {
@@ -47,4 +49,13 @@ Color hexToColor(String hexString) {
   } catch (e) {
     return Colors.black;
   }
+}
+
+Map<String, Object?> parseAiStringToMap(String aiString) {
+  final aiStringJson = aiString
+      .replaceAll('```json', '')
+      .replaceAll('```', '')
+      .replaceAll('\n', '');
+  final aiStringJsonDecoded = jsonDecode(aiStringJson);
+  return aiStringJsonDecoded;
 }

@@ -68,12 +68,36 @@ class AiService {
 
   // Example method (you can add your own methods here)
   Future<String?> askToAi(String promptToSend) async {
-    //await Future.delayed(const Duration(seconds: 3));
-    //return "";
+    //await Future.delayed(const Duration(seconds: 1));
+    /*return """
+      ```json
+      {
+        "description": "This small, orange, lizard-like Pokémon is known for the flame burning at the tip of its tail. The flame's intensity reflects its health and emotions, flaring
+        up when excited and dwindling when weak. It prefers warm places and will let out a cry if its tail flame is about to go out. It's a Fire-type 🔥, often chosen for its fiery
+        spirit and eventual powerful evolutions. Its underbelly is typically a lighter, cream color.",
+        "strength": "As a Fire-type, it naturally excels against Grass 🌿, Bug 🐞, Ice ❄️, and Steel-type opponents, dealing double damage with its Fire attacks. Its primary offensive
+        moves like Ember, and later Flamethrower, benefit from Same Type Attack Bonus (STAB), making them particularly potent. Early on, it can also utilize moves like Scratch for
+        neutral coverage and Growl to reduce an opponent's attack, giving it some utility beyond pure offense.",
+        "weakness": "Its Fire typing makes it vulnerable to Water 💧, Ground, and Rock-type attacks, each dealing double damage. Common moves like Water Gun, Rock Throw, and Earthquake
+        can be devastating. It generally has lower defensive stats, especially in its early stage, making it susceptible to being knocked out quickly by these super-effective hits or
+        strong neutral attacks. Care must be taken when facing Pokémon that commonly use these types of moves."
+      }
+      ```
+    """;*/
+    /*return """
+      {
+        "id": 74,
+        "name": "Geodude",
+        "motivation": "It was chosen because its dual Rock/Ground typing makes it extremely vulnerable (4x weakness) to Grass-type attacks, which your starting Pokémon can
+        effectively use. Additionally, its overall power level, measured by base stat total (300), is very close to your Pokémon's (Bulbasaur's BST is 318), ensuring the
+        type advantage is the key factor in a fair fight rather than a sheer power difference."
+      }
+    """;*/
 
     // Provide a prompt that contains text
     final prompt = [Content.text(promptToSend)];
     GenerateContentResponse result = await model.generateContent(prompt);
+    print(result.text);
     return result.text;
   }
 }
