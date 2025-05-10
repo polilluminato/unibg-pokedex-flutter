@@ -8,6 +8,7 @@ abstract class AiPokemonFight with _$AiPokemonFight {
   const factory AiPokemonFight({
     required int id,
     required String name,
+    required List<String> types,
     required String motivation,
   }) = _AiPokemonFight;
 

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/models/ai_pokemon_description.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/kprompts.dart';
+import 'package:unibg_pokemon/service/kprompts.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/loading_view.dart';
 import 'package:unibg_pokemon/service/ai_service.dart';
 import 'package:unibg_pokemon/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
-class PokemonDescriptionView extends StatefulWidget {
-  const PokemonDescriptionView({super.key, required this.pokemonName});
+class PokemonDescriptionPage extends StatefulWidget {
+  const PokemonDescriptionPage({super.key, required this.pokemonName});
 
   final String pokemonName;
 
   @override
-  State<PokemonDescriptionView> createState() => _PokemonDescriptionViewState();
+  State<PokemonDescriptionPage> createState() => _PokemonDescriptionPageState();
 }
 
-class _PokemonDescriptionViewState extends State<PokemonDescriptionView> {
+class _PokemonDescriptionPageState extends State<PokemonDescriptionPage> {
   late final Future<String?> aiString;
 
   @override
@@ -29,16 +29,18 @@ class _PokemonDescriptionViewState extends State<PokemonDescriptionView> {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
 
-    return FutureBuilder<String?>(
-      future: aiString,
-      builder: (context, snapshot) {
-        if (snapshot.hasData) {
-          final aiPokemonDescription = AiPokemonDescription.fromJson(
-            parseAiStringToMap(snapshot.data!),
-          );
-          return Padding(
-            padding: const EdgeInsets.all(Dimens.mainPadding),
-            child: Column(
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Description"),
+      ),
+      body: FutureBuilder<String?>(
+        future: aiString,
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            final aiPokemonDescription = AiPokemonDescription.fromJson(
+              parseAiStringToMap(snapshot.data!),
+            );
+            return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
@@ -64,12 +66,12 @@ class _PokemonDescriptionViewState extends State<PokemonDescriptionView> {
                 ),
                 Text(aiPokemonDescription.weakness, style: textTheme.bodyLarge),
               ],
-            ),
-          );
-        } else {
-          return const LoadingView();
-        }
-      },
+            );
+          } else {
+            return const LoadingView();
+          }
+        },
+      ),
     );
   }
 }

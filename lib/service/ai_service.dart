@@ -85,6 +85,7 @@ class AiService {
       ```
     """;*/
     /*return """
+      ```json
       {
         "id": 74,
         "name": "Geodude",
@@ -92,6 +93,44 @@ class AiService {
         effectively use. Additionally, its overall power level, measured by base stat total (300), is very close to your Pokémon's (Bulbasaur's BST is 318), ensuring the
         type advantage is the key factor in a fair fight rather than a sheer power difference."
       }
+      ```
+    """;*/
+
+    /*return """
+      ```json
+      [
+        {
+          "id": 59,
+          "name": "Arcanine",
+          "motivation": "Provides crucial Fire-type coverage with strong offensive stats and good speed. It effectively counters Ice-types that threaten other team members,
+          while also resisting Fire, Grass, and Bug attacks, adding defensive utility."
+        },
+        {
+          "id": 121,
+          "name": "Starmie",
+          "motivation": "Offers dual Water and Psychic typing, bringing excellent speed and special attack. This allows it to counter Fire-types, Ground-types, and
+          Fighting-types effectively, while also providing valuable offensive pressure with its STAB moves and coverage options like Ice Beam or Thunderbolt."
+        },
+        {
+          "id": 112,
+          "name": "Rhydon",
+          "motivation": "Brings powerful physical Attack and Defense with its Rock/Ground typing. It is immune to Electric-type attacks, serving as a reliable switch-in,
+          and can deal super-effective damage to Fire, Electric, Rock, and Poison-types, breaking through common defensive cores."
+        },
+        {
+          "id": 135,
+          "name": "Jolteon",
+          "motivation": "Delivers immense speed and high Special Attack as an Electric-type. It excels at outspeeding and heavily damaging Water and Flying-types, common
+          threats. Its single Ground-type weakness is manageable with team support, and it acts as a fast offensive pivot."
+        },
+        {
+          "id": 143,
+          "name": "Snorlax",
+          "motivation": "Adds exceptional special bulk and potent offensive power with its Normal typing. It can absorb many special attacks and retaliate strongly with
+          STAB Body Slam or coverage moves. Its sole Fighting-type weakness is covered by teammates, providing overall team stability."
+        }
+      ]
+      ```
     """;*/
 
     // Provide a prompt that contains text

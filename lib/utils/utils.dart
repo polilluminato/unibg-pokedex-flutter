@@ -52,10 +52,27 @@ Color hexToColor(String hexString) {
 }
 
 Map<String, Object?> parseAiStringToMap(String aiString) {
-  final aiStringJson = aiString
-      .replaceAll('```json', '')
-      .replaceAll('```', '')
-      .replaceAll('\n', '');
+  final aiStringJson =
+      aiString.replaceAll('```json', '').replaceAll('```', '').trim();
+
   final aiStringJsonDecoded = jsonDecode(aiStringJson);
   return aiStringJsonDecoded;
+}
+
+List<Map<String, Object?>> parseAiStringToListMap(String aiString) {
+  // Pulizia della stringa eliminando le parti di markdown e gli spazi
+  final cleanedString =
+      aiString.replaceAll('```json', '').replaceAll('```', '').trim();
+
+  // Decodifica della stringa JSON
+  final List<dynamic> decodedList = jsonDecode(cleanedString);
+
+  // Conversione della lista di dynamic in List<Map<String, Object?>>
+  return decodedList
+      .map((item) => Map<String, Object?>.from(item as Map))
+      .toList();
+}
+
+String getDefaultPokemonImage(int id) {
+  return "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/$id.png";
 }
