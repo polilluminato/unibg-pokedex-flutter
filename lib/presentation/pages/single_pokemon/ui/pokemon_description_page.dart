@@ -40,32 +40,33 @@ class _PokemonDescriptionPageState extends State<PokemonDescriptionPage> {
             final aiPokemonDescription = AiPokemonDescription.fromJson(
               parseAiStringToMap(snapshot.data!),
             );
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "Description",
-                  style: textTheme.titleLarge,
-                ),
-                Text(aiPokemonDescription.description,
-                    style: textTheme.bodyLarge),
-                const SizedBox(
-                  height: Dimens.mainSpace,
-                ),
-                Text(
-                  "Strength",
-                  style: textTheme.titleLarge,
-                ),
-                Text(aiPokemonDescription.strength, style: textTheme.bodyLarge),
-                const SizedBox(
-                  height: Dimens.mainSpace,
-                ),
-                Text(
-                  "Weakness",
-                  style: textTheme.titleLarge,
-                ),
-                Text(aiPokemonDescription.weakness, style: textTheme.bodyLarge),
-              ],
+            return Padding(
+              padding: const EdgeInsets.all(Dimens.mainPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(aiPokemonDescription.description,
+                      style: textTheme.bodyLarge),
+                  const SizedBox(
+                    height: Dimens.mainSpace,
+                  ),
+                  Text(
+                    "Strength",
+                    style: textTheme.titleLarge,
+                  ),
+                  Text(aiPokemonDescription.strength,
+                      style: textTheme.bodyLarge),
+                  const SizedBox(
+                    height: Dimens.mainSpace,
+                  ),
+                  Text(
+                    "Weakness",
+                    style: textTheme.titleLarge,
+                  ),
+                  Text(aiPokemonDescription.weakness,
+                      style: textTheme.bodyLarge),
+                ],
+              ),
             );
           } else {
             return const LoadingView();

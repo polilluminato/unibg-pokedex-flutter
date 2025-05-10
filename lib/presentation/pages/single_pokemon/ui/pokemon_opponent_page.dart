@@ -46,41 +46,44 @@ class _PokemonOpponentPageState extends State<PokemonOpponentPage> {
             final aiPokemonFight = AiPokemonFight.fromJson(
               parseAiStringToMap(snapshot.data!),
             );
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                ExtendedImage.network(
-                  getDefaultPokemonImage(aiPokemonFight.id),
-                  width: 200,
-                  height: 200,
-                ),
-                Text(aiPokemonFight.name, style: textTheme.headlineMedium),
-                const SizedBox(height: Dimens.mainSpace),
-                Wrap(
-                  runSpacing: Dimens.smallPadding,
-                  spacing: Dimens.smallPadding,
-                  children: aiPokemonFight.types
-                      .map(
-                        (type) => Chip(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(
-                              Dimens.hugeRoundedCorner,
+            return Padding(
+              padding: const EdgeInsets.all(Dimens.mainPadding),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  ExtendedImage.network(
+                    getDefaultPokemonImage(aiPokemonFight.id),
+                    width: 200,
+                    height: 200,
+                  ),
+                  Text(aiPokemonFight.name, style: textTheme.headlineMedium),
+                  const SizedBox(height: Dimens.mainSpace),
+                  Wrap(
+                    runSpacing: Dimens.smallPadding,
+                    spacing: Dimens.smallPadding,
+                    children: aiPokemonFight.types
+                        .map(
+                          (type) => Chip(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                Dimens.hugeRoundedCorner,
+                              ),
+                            ),
+                            label: Text(type.capitalize()),
+                            backgroundColor:
+                                hexToColor(ColorType.fromName(type).color),
+                            labelStyle: const TextStyle(
+                              color: Colors.white,
                             ),
                           ),
-                          label: Text(type.capitalize()),
-                          backgroundColor:
-                              hexToColor(ColorType.fromName(type).color),
-                          labelStyle: const TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
-                      )
-                      .toList(),
-                ),
-                const SizedBox(height: Dimens.mainSpace),
-                Text(aiPokemonFight.motivation,
-                    textAlign: TextAlign.start, style: textTheme.bodyLarge),
-              ],
+                        )
+                        .toList(),
+                  ),
+                  const SizedBox(height: Dimens.mainSpace),
+                  Text(aiPokemonFight.motivation,
+                      textAlign: TextAlign.start, style: textTheme.bodyLarge),
+                ],
+              ),
             );
           } else {
             return const LoadingView();
