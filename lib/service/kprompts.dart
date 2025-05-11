@@ -36,6 +36,7 @@ String kPromptPokemonOpponentAdvantage(String pokemonName) {
 
     Some indications:
     * the motivation string MUST be in plain text format and MUST contain the reason why the Pokèmon was chosen
+    * the id MUST be a number between 1 and 151, no leading zeros
     * DO NOT use any special characters to handle the new line
     * you MUST ONLY use Pokèmon from the first series, so up to number 151
     * The types array MUST contain the types of the Pokèmon
@@ -62,6 +63,7 @@ String kPromptPokemonOpponentDisadvantage(String pokemonName) {
 
     Some indications:
     * the motivation string MUST be in plain text format and MUST contain the reason why the Pokèmon was chosen
+    * the id MUST be a number between 1 and 151, no leading zeros
     * DO NOT use any special characters to handle the new line
     * you MUST ONLY use Pokèmon from the first series, so up to number 151
     * The types array MUST contain the types of the Pokèmon
@@ -100,6 +102,7 @@ String kPromptPokemonTeam(String pokemonName) {
     * the list MUST contain the 5 Pokèmon that $pokemonName is teamed up with.
     * DO NOT include $pokemonName in the list
     * the motivation string MUST be in plain text format and MUST contain the reason why the Pokèmon was chosen
+    * the id MUST be a number between 1 and 151, no leading zeros
     * DO NOT use any special characters to handle the new line
     * you MUST ONLY use Pokèmon from the first series, so up to number 151
     * The types array MUST contain the types of the Pokèmon

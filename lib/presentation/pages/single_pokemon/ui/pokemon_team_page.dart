@@ -45,8 +45,8 @@ class _PokemonTeamPageState extends State<PokemonTeamPage> {
                 return ListTile(
                   leading: ExtendedImage.network(
                     getDefaultPokemonImage(pokemon.id),
-                    height: 50,
-                    width: 50,
+                    height: 72,
+                    width: 72,
                   ),
                   title: Text(pokemon.name),
                   subtitle: Text(pokemon.motivation),

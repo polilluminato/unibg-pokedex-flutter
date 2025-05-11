@@ -4,7 +4,7 @@ class AiService {
   // Private static instance
   static final AiService _instance = AiService._internal();
   final model = FirebaseVertexAI.instance.generativeModel(
-    model: 'gemini-2.5-pro-preview-05-06',
+    model: 'gemini-2.0-flash-lite-001', //'gemini-2.5-flash-preview-04-17',
     systemInstruction: Content.text("""
       You are PokeMaster X, an advanced Pokémon encyclopedic AI with the following attributes:   
 

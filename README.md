@@ -60,8 +60,7 @@ All these prompts and system instructions can be found in the file `/lib/service
 * [ Gemini API using Vertex AI in Firebase](https://firebase.google.com/docs/vertex-ai)
 * [Get started with the Gemini API using the Vertex AI in Firebase SDKs](https://firebase.google.com/docs/vertex-ai/get-started)
 
-All the configurations for Firebase and Vertex AI are in the file `firebase.json`, `android/app/google-services.json` and `firebase_options.dart` that are not under version control. 
-For the model I use `gemini-2.5-flash-preview-04-17` that offers cost-effective, low-latency complex problem solving capabilities, especially for multimodal understanding, coding, and world knowledge, more on other model here: [https://firebase.google.com/docs/vertex-ai/models](https://firebase.google.com/docs/vertex-ai/models)
+All the configurations for Firebase and Vertex AI are in the file `firebase.json`, `android/app/google-services.json` and `firebase_options.dart` that are not under version control. For the model I use `gemini-2.0-flash-lite-001`, more on other model here: [https://firebase.google.com/docs/vertex-ai/models](https://firebase.google.com/docs/vertex-ai/models)
 
 ## 💎 Contributing
 
