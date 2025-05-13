@@ -14,6 +14,8 @@
 
 This repository contains the source code of the demo [Pokédex](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#Pok%C3%A9dex) (ポケモン図鑑, Pokémon Zukan, lit.: Pokémon Encyclopedia) application that I made for the lecture given for the [Scuola di Ingegneria](https://www.unibg.it/embed-ingegneria/strutture-scuola-ingegneria) at the [University of Bergamo](https://www.unibg.it/). The application allows users to view the first 151 Pokémon in both list and grid format, navigate to their dedicated page, and view statistics.
 
+The [Flutter - Pokédex - UniBG](https://docs.google.com/presentation/d/1nJvaS6JzNPdh6aU2XAQoXEWMFffXNeyaAxlFsQpOcBI/edit?usp=sharing) slides can be found here.
+
 Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.it/polilluminato/pokedex/)
 
 ### Packages
@@ -22,6 +24,7 @@ Here are the most interesting packages used in the development of the applicatio
 
 * [audioplayers](https://pub.dev/packages/audioplayers): A Flutter plugin to play multiple audio files simultaneously
 * [flutter_animate](https://pub.dev/packages/flutter_animate): Add beautiful animated effects & builders in Flutter, via an easy, customizable, unified API
+* (DISCONTINUED)[palette_generator](https://pub.dev/packages/palette_generator): Flutter package for generating palette colors from a source image
 * [pinch_zoom](https://pub.dev/packages/pinch_zoom): A widget based on Flutter's new Interactive Viewer that makes picture pinch zoom, and return to its initial size and position when released
 * [window_manager](https://pub.dev/packages/window_manager): This plugin allows Flutter desktop apps to resizing and repositioning the window
 * [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet): This package provides a responsive modal with multiple pages, motion animation for page transitions, and scrollable content within each page
@@ -55,12 +58,12 @@ Artificial intelligence was used to create parts of the UI, in particular to gen
 * the information about the Pokèmon you are disadvantaged with
 * the creation of the best team given the chosen Pokémon
 
-All these prompts and system instructions can be found in the file `/lib/service/kprompts.dart` and `/lib/service/ai_service.dart`. The AI service used is Gemini, the configuration of which was done following these guides
+All these prompts and system instructions can be found in files `/lib/service/kprompts.dart` and `/lib/service/ai_service.dart`. The AI service used is Gemini, the configuration of which was done following these guides:
 
-* [ Gemini API using Vertex AI in Firebase](https://firebase.google.com/docs/vertex-ai)
+* [Gemini API using Vertex AI in Firebase](https://firebase.google.com/docs/vertex-ai)
 * [Get started with the Gemini API using the Vertex AI in Firebase SDKs](https://firebase.google.com/docs/vertex-ai/get-started)
 
-All the configurations for Firebase and Vertex AI are in the file `firebase.json`, `android/app/google-services.json` and `firebase_options.dart` that are not under version control. For the model I use `gemini-2.0-flash-lite-001`, more on other model here: [https://firebase.google.com/docs/vertex-ai/models](https://firebase.google.com/docs/vertex-ai/models)
+All the configurations for Firebase and Vertex AI are in files `firebase.json`, `android/app/google-services.json` and `firebase_options.dart` that are not under version control. For the model I use `gemini-2.0-flash-lite-001`, more on other models here: [https://firebase.google.com/docs/vertex-ai/models](https://firebase.google.com/docs/vertex-ai/models)
 
 ## 💎 Contributing
 
