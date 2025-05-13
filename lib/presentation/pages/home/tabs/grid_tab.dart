@@ -16,7 +16,7 @@ class GridTab extends StatelessWidget {
             return GridView.builder(
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2,
-                childAspectRatio: 1.2,
+                childAspectRatio: 1.5,
               ),
               itemCount: snapshot.data!.length,
               itemBuilder: (context, index) {

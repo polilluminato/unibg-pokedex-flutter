@@ -82,37 +82,31 @@ class SinglePokemonPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const CustomDivider(),
                     Row(
                       mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Text(
-                          "Type",
-                          style: textTheme.titleLarge,
-                        ),
-                        Wrap(
-                          runSpacing: Dimens.smallPadding,
-                          spacing: Dimens.smallPadding,
-                          children: myPokemon.types
-                              .map(
-                                (type) => Chip(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(
-                                      Dimens.hugeRoundedCorner,
-                                    ),
-                                  ),
-                                  label: Text(type.type.name.capitalize()),
-                                  backgroundColor: hexToColor(
-                                      ColorType.fromName(type.type.name).color),
-                                  labelStyle: const TextStyle(
-                                    color: Colors.white,
-                                  ),
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      spacing: Dimens.smallSpace,
+                      children: myPokemon.types
+                          .map(
+                            (type) => Chip(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(
+                                  Dimens.hugeRoundedCorner,
                                 ),
-                              )
-                              .toList(),
-                        )
-                      ],
+                                side: BorderSide(
+                                  color: hexToColor(
+                                      ColorType.fromName(type.type.name).color),
+                                ),
+                              ),
+                              label: Text(type.type.name.capitalize()),
+                              backgroundColor: hexToColor(
+                                  ColorType.fromName(type.type.name).color),
+                              labelStyle: const TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          )
+                          .toList(),
                     ),
                     const CustomDivider(),
                     Text(
