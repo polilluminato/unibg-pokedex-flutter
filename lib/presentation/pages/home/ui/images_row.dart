@@ -24,6 +24,8 @@ class ImagesRow extends StatelessWidget {
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
+        _createImage(myPokemon.sprites.frontDefault, imageSize),
+        _createImage(myPokemon.sprites.frontShiny, imageSize),
         _createImage(myPokemon.sprites.other.showdown.frontDefault, imageSize),
         _createImage(myPokemon.sprites.other.showdown.frontShiny, imageSize),
       ],
