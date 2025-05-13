@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite_other_dreamworld.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite_other_home.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite_other_officialartwork.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite_other_showdown.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite_other_dreamworld.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite_other_home.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite_other_officialartwork.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite_other_showdown.dart';
 
 part 'pokemon_sprite_other.freezed.dart';
 part 'pokemon_sprite_other.g.dart';

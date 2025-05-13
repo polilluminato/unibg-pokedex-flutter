@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:unibg_pokemon/models/pokemon_cry.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite.dart';
-import 'package:unibg_pokemon/models/pokemon_stat_item.dart';
-import 'package:unibg_pokemon/models/pokemon_type_item.dart';
+import 'package:unibg_pokemon/data/models/pokemon_cry.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite.dart';
+import 'package:unibg_pokemon/data/models/pokemon_stat_item.dart';
+import 'package:unibg_pokemon/data/models/pokemon_type_item.dart';
 
 part 'pokemon.freezed.dart';
 part 'pokemon.g.dart';

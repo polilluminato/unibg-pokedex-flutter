@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 
 class CustomDivider extends StatelessWidget {
   const CustomDivider({super.key});

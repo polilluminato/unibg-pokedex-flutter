@@ -1,9 +1,9 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/models/ai_pokemon_fight.dart';
-import 'package:unibg_pokemon/service/kprompts.dart';
+import 'package:unibg_pokemon/data/models/ai_pokemon_fight.dart';
+import 'package:unibg_pokemon/config/kprompts.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/loading_view.dart';
-import 'package:unibg_pokemon/service/ai_service.dart';
+import 'package:unibg_pokemon/services/ai_service.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class PokemonTeamPage extends StatefulWidget {

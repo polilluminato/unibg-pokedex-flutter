@@ -2,7 +2,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/presentation/pages/settings/theme_provider.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class PokemonThemeButton extends ConsumerWidget {

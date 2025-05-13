@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/models/pokemon.dart';
+import 'package:unibg_pokemon/data/models/pokemon.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_description_page.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_opponent_page.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_team_page.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 
 Future<void> modalAIView({
   required BuildContext context,
@@ -38,7 +38,6 @@ Future<void> modalAIView({
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -55,7 +54,6 @@ Future<void> modalAIView({
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -73,7 +71,6 @@ Future<void> modalAIView({
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -91,7 +88,6 @@ Future<void> modalAIView({
                     minimumSize: const Size.fromHeight(56),
                   ),
                   onPressed: () {
-                    Navigator.of(context).pop();
                     Navigator.push(
                       context,
                       MaterialPageRoute(

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:unibg_pokemon/models/pokemon_sprite_other.dart';
+import 'package:unibg_pokemon/data/models/pokemon_sprite_other.dart';
 
 part 'pokemon_sprite.freezed.dart';
 part 'pokemon_sprite.g.dart';

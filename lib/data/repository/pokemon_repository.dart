@@ -1,7 +1,7 @@
 import 'dart:convert';
 
-import 'package:unibg_pokemon/models/pokemon.dart';
-import 'package:unibg_pokemon/models/pokemon_item.dart';
+import 'package:unibg_pokemon/data/models/pokemon.dart';
+import 'package:unibg_pokemon/data/models/pokemon_item.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonRepository {

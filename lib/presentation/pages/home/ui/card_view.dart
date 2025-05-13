@@ -1,8 +1,8 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/models/pokemon_item.dart';
+import 'package:unibg_pokemon/data/models/pokemon_item.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/singlepokemon_page.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 
 class CardView extends StatelessWidget {
   const CardView({super.key, required this.thisPokemon, required this.type});

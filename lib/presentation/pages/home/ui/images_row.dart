@@ -1,6 +1,6 @@
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/models/pokemon.dart';
+import 'package:unibg_pokemon/data/models/pokemon.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class ImagesRow extends StatelessWidget {
@@ -21,7 +21,7 @@ class ImagesRow extends StatelessWidget {
 
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         _createImage(myPokemon.sprites.other.showdown.frontDefault, imageSize),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:unibg_pokemon/models/pokemon_item.dart';
+import 'package:unibg_pokemon/data/models/pokemon_item.dart';
 import 'package:unibg_pokemon/presentation/pages/home/ui/card_view.dart';
-import 'package:unibg_pokemon/repository/pokemon_repository.dart';
+import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
 
 class GridTab extends StatelessWidget {
   const GridTab({super.key});

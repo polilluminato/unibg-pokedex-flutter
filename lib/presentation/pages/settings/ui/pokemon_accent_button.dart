@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:palette_generator/palette_generator.dart';
 import 'package:unibg_pokemon/presentation/pages/settings/theme_provider.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class PokemonAccentButton extends ConsumerStatefulWidget {

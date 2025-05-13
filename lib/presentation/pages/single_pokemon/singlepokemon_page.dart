@@ -3,13 +3,13 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
-import 'package:unibg_pokemon/enums/colorType_enum.dart';
-import 'package:unibg_pokemon/models/pokemon.dart';
+import 'package:unibg_pokemon/data/enums/colortype_enum.dart';
+import 'package:unibg_pokemon/data/models/pokemon.dart';
 import 'package:unibg_pokemon/presentation/pages/home/ui/divider_view.dart';
 import 'package:unibg_pokemon/presentation/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
-import 'package:unibg_pokemon/repository/pokemon_repository.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
@@ -19,7 +19,7 @@ class SinglePokemonPage extends StatelessWidget {
   final int pokemonId;
   final AudioPlayer _player = AudioPlayer();
 
-  void _playCry(String url) async {
+  void _playAudio(String url) async {
     _player.play(UrlSource(url));
   }
 
@@ -41,7 +41,7 @@ class SinglePokemonPage extends StatelessWidget {
               return SingleChildScrollView(
                 padding: const EdgeInsets.all(Dimens.mainPadding),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
                       child: PinchZoom(
@@ -82,9 +82,7 @@ class SinglePokemonPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(
-                      height: Dimens.hugeSpace,
-                    ),
+                    const CustomDivider(),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -116,9 +114,7 @@ class SinglePokemonPage extends StatelessWidget {
                         )
                       ],
                     ),
-                    const SizedBox(
-                      height: Dimens.mainSpace,
-                    ),
+                    const CustomDivider(),
                     Text(
                       "Statistics",
                       style: textTheme.titleLarge,
@@ -143,27 +139,21 @@ class SinglePokemonPage extends StatelessWidget {
                       },
                     ),
                     const CustomDivider(),
-                    Text(
-                      "Cry",
-                      style: textTheme.titleLarge,
-                    ),
-                    const SizedBox(
-                      height: Dimens.mainSpace,
-                    ),
                     Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
+                        Text(
+                          "Audio",
+                          style: textTheme.titleLarge,
+                        ),
+                        const Spacer(),
                         ElevatedButton.icon(
-                          onPressed: () => _playCry(myPokemon.cries.legacy),
+                          onPressed: () => _playAudio(myPokemon.cries.legacy),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Legacy"),
                         ),
-                        const SizedBox(
-                          width: Dimens.mainSpace,
-                        ),
+                        gapW(Dimens.mainSpace),
                         ElevatedButton.icon(
-                          onPressed: () => _playCry(myPokemon.cries.latest),
+                          onPressed: () => _playAudio(myPokemon.cries.latest),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Latest"),
                         ),

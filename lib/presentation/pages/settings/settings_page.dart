@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:unibg_pokemon/presentation/pages/settings/ui/pokemon_accent_button.dart';
 import 'package:unibg_pokemon/presentation/pages/settings/ui/pokemon_theme_button.dart';
-import 'package:unibg_pokemon/styles/dimens.dart';
+import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
