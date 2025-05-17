@@ -18,7 +18,7 @@ The [Flutter - Pokédex - UniBG](https://docs.google.com/presentation/d/1nJvaS6J
 
 Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.it/polilluminato/pokedex/)
 
-### Packages
+## 📦 Packages
 
 Here are the most interesting packages used in the development of the application with a brief description:
 
@@ -29,7 +29,7 @@ Here are the most interesting packages used in the development of the applicatio
 * [window_manager](https://pub.dev/packages/window_manager): This plugin allows Flutter desktop apps to resizing and repositioning the window
 * [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet): This package provides a responsive modal with multiple pages, motion animation for page transitions, and scrollable content within each page
 
-### Compile
+## 🛠 Compile
 
 I used [freezed](https://pub.dev/packages/freezed) to handle the json responses coming back from the API, but the generated `*.freezed.dart` and `*.g.dart` files were not committed, so before starting the project you need to run `build_runner` in order to create them:
 
