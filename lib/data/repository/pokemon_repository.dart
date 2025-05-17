@@ -5,7 +5,11 @@ import 'package:unibg_pokemon/data/models/pokemon_item.dart';
 import 'package:http/http.dart' as http;
 
 class PokemonRepository {
-  PokemonRepository();
+  static final PokemonRepository _instance = PokemonRepository._internal();
+
+  PokemonRepository._internal();
+
+  factory PokemonRepository() => _instance;
 
   Future<List<PokemonItem>?> getPokemonList() async {
     var response = await http.get(

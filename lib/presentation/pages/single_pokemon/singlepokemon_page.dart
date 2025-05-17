@@ -29,11 +29,14 @@ class SinglePokemonPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Single Pokémon"),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => Navigator.pop(context),
+        ),
       ),
       body: FutureBuilder<Pokemon>(
         future: PokemonRepository().getSinglePokemon(pokemonId),
-        builder: (_, AsyncSnapshot<Pokemon> snapshot) {
+        builder: (_, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if (snapshot.hasData) {
               Pokemon myPokemon = snapshot.data!;
@@ -44,11 +47,17 @@ class SinglePokemonPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
+                      child: Text(
+                        myPokemon.name.capitalize(),
+                        style: textTheme.displaySmall,
+                      ).animate().scale(),
+                    ),
+                    Center(
                       child: PinchZoom(
                         maxScale: 2.5,
                         child: ExtendedImage.network(
                           myPokemon.sprites.other.officialArtwork.frontDefault,
-                          width: getScreenWidth(context) * .5,
+                          width: getScreenWidth(context) * .7,
                         ),
                       ),
                     ),
@@ -70,49 +79,37 @@ class SinglePokemonPage extends StatelessWidget {
                       ),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      spacing: Dimens.smallSpace,
                       children: [
-                        Text(
-                          myPokemon.name.capitalize(),
-                          style: textTheme.displayMedium,
-                        ).animate().scale(),
+                        ...myPokemon.types.map(
+                          (type) => Chip(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(
+                                Dimens.hugeRoundedCorner,
+                              ),
+                              side: BorderSide(
+                                color: hexToColor(
+                                    ColorType.fromName(type.type.name).color),
+                              ),
+                            ),
+                            label: Text(type.type.name.capitalize()),
+                            backgroundColor: hexToColor(
+                                ColorType.fromName(type.type.name).color),
+                            labelStyle: const TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        Spacer(),
                         Text(
                           "#${myPokemon.id.toString()}",
                           style: textTheme.headlineMedium,
                         ),
                       ],
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      spacing: Dimens.smallSpace,
-                      children: myPokemon.types
-                          .map(
-                            (type) => Chip(
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(
-                                  Dimens.hugeRoundedCorner,
-                                ),
-                                side: BorderSide(
-                                  color: hexToColor(
-                                      ColorType.fromName(type.type.name).color),
-                                ),
-                              ),
-                              label: Text(type.type.name.capitalize()),
-                              backgroundColor: hexToColor(
-                                  ColorType.fromName(type.type.name).color),
-                              labelStyle: const TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          )
-                          .toList(),
-                    ),
                     const CustomDivider(),
-                    Text(
-                      "Statistics",
-                      style: textTheme.titleLarge,
-                    ),
                     ListView.builder(
                       shrinkWrap: true,
                       itemCount: myPokemon.stats.length,
@@ -123,11 +120,11 @@ class SinglePokemonPage extends StatelessWidget {
                             myPokemon.stats[index].stat.name
                                 .capitalize()
                                 .replaceAll("-", " "),
-                            style: textTheme.bodyLarge,
+                            style: textTheme.titleLarge,
                           ),
                           trailing: Text(
                             myPokemon.stats[index].baseStat.toString(),
-                            style: textTheme.bodyLarge,
+                            style: textTheme.titleLarge,
                           ),
                         );
                       },
@@ -140,13 +137,13 @@ class SinglePokemonPage extends StatelessWidget {
                           style: textTheme.titleLarge,
                         ),
                         const Spacer(),
-                        ElevatedButton.icon(
+                        FilledButton.icon(
                           onPressed: () => _playAudio(myPokemon.cries.legacy),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Legacy"),
                         ),
                         gapW(Dimens.mainSpace),
-                        ElevatedButton.icon(
+                        FilledButton.icon(
                           onPressed: () => _playAudio(myPokemon.cries.latest),
                           icon: const Icon(Icons.audiotrack),
                           label: const Text("Latest"),

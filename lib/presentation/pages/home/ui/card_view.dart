@@ -14,17 +14,17 @@ class CardView extends StatelessWidget {
     return [
       ExtendedImage.network(
         thisPokemon.imagePng!,
-        width: type == "list" ? 50 : 80,
-        height: type == "list" ? 50 : 80,
+        width: type == "list" ? 72 : 88,
+        height: type == "list" ? 72 : 88,
       ),
       const SizedBox(
         width: Dimens.mainSpace,
-        height: Dimens.mainSpace,
+        height: Dimens.smallSpace,
       ),
       Expanded(
         child: Text(
           thisPokemon.name,
-          style: thisTheme.textTheme.titleLarge,
+          style: thisTheme.textTheme.headlineMedium,
         ),
       ),
     ];

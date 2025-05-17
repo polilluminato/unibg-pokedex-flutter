@@ -112,7 +112,7 @@ String kPromptPokemonTeam(String pokemonName) {
     * The choosen Pokèmon MUST be in the range of BST +/- 100
     * The team MUST consist of at least these types: fire, grass, water, earth, electro, psycho
 
-    Examples of teams:
+    Examples of well balanced teams:
     * Charizard, Lapras, Nidoking, Jolteon, Gengar, Dragonite
     * Zapdos, Slowbro, Ninetales, Rhydon, Gengar, Snorlax
     * Articuno, Arcanine, Exeggutor, Gengar, Rhydon, Poliwrath

@@ -62,9 +62,7 @@ class AiService {
   AiService._internal();
 
   // Factory constructor returns the same instance every time
-  factory AiService() {
-    return _instance;
-  }
+  factory AiService() => _instance;
 
   // Example method (you can add your own methods here)
   Future<String?> askToAi(String promptToSend) async {
