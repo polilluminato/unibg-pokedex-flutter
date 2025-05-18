@@ -14,8 +14,8 @@ class CardView extends StatelessWidget {
     return [
       ExtendedImage.network(
         thisPokemon.imagePng!,
-        width: type == "list" ? 72 : 88,
-        height: type == "list" ? 72 : 88,
+        width: 72,
+        height: 72,
       ),
       const SizedBox(
         width: Dimens.mainSpace,
@@ -24,7 +24,7 @@ class CardView extends StatelessWidget {
       Expanded(
         child: Text(
           thisPokemon.name,
-          style: thisTheme.textTheme.headlineMedium,
+          style: thisTheme.textTheme.headlineSmall,
         ),
       ),
     ];

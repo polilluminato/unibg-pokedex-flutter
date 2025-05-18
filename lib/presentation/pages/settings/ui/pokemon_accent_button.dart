@@ -29,7 +29,7 @@ class _PokemonAccentButtonState extends ConsumerState<PokemonAccentButton> {
     super.initState();
     imageNetworkPath =
         "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${widget.pokemonId}.png";
-    _updatePaletteGenerator();
+    //_updatePaletteGenerator();
   }
 
   Future<void> _updatePaletteGenerator() async {
@@ -52,7 +52,8 @@ class _PokemonAccentButtonState extends ConsumerState<PokemonAccentButton> {
     final acProvider = ref.watch(accentColorProvider);
 
     return InkWell(
-      onTap: () {
+      onTap: () async {
+        await _updatePaletteGenerator();
         ref.read(accentColorProvider.notifier).update((state) => color!);
       },
       child: Container(
