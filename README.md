@@ -39,15 +39,15 @@ dart run build_runner build --delete-conflicting-outputs
 
 ## 📱 Screenshots
 
-| Home List | Home Grid | Modal |
+| Home List | Home Grid | Settings |
 |-|-|-|
-| <img width="300" src="screenshots/home_list_light.jpg"> | <img width="300" src="screenshots/home_grid_light.jpg"> | <img width="300" src="screenshots/modal_light.jpg"> | 
-| <img width="300" src="screenshots/home_list_dark.jpg"> | <img width="300" src="screenshots/home_grid_dark.jpg"> | <img width="300" src="screenshots/modal_dark.jpg"> | 
+| <img width="300" src=".github/screenshots/home_list_light.jpg"> | <img width="300" src=".github/screenshots/home_grid_light.jpg"> | <img width="300" src=".github/screenshots/settings_light.jpg"> | 
+| <img width="300" src=".github/screenshots/home_list_dark.jpg"> | <img width="300" src=".github/screenshots/home_grid_dark.jpg"> | <img width="300" src=".github/screenshots/settings_dark.jpg"> | 
 
-| Single Page (1) | Single Page (2) | Settings |
+| Single Page (1) | Single Page (2) | Team AI |
 |-|-|-|
-| <img width="300" src="screenshots/single_page_top_light.jpg"> | <img width="300" src="screenshots/single_page_bottom_light.jpg"> | <img width="300" src="screenshots/settings_light.jpg"> | 
-| <img width="300" src="screenshots/single_page_top_dark.jpg"> | <img width="300" src="screenshots/single_page_bottom_dark.jpg"> | <img width="300" src="screenshots/settings_dark.jpg"> | 
+| <img width="300" src=".github/screenshots/single_pokemon_light.jpg"> | <img width="300" src=".github/screenshots/single_pokemon_modal_light.jpg"> | <img width="300" src=".github/screenshots/team_ai_light.jpg"> | 
+| <img width="300" src=".github/screenshots/single_pokemon_dark.jpg"> | <img width="300" src=".github/screenshots/single_pokemon_modal_dark.jpg"> | <img width="300" src=".github/screenshots/team_ai_dark.jpg"> | 
 
 ## 🤖 AI Stuff
 
