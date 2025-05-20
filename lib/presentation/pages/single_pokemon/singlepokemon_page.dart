@@ -1,13 +1,10 @@
-import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/data/models/pokemon.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
 import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
-import 'package:unibg_pokemon/utils/utils.dart';
 
 class SinglePokemonPage extends StatelessWidget {
   const SinglePokemonPage({super.key, required this.pokemonId});
@@ -42,15 +39,6 @@ class SinglePokemonPage extends StatelessWidget {
                         myPokemon.name.capitalize(),
                         style: textTheme.displaySmall,
                       ).animate().scale(),
-                    ),
-                    Center(
-                      child: PinchZoom(
-                        maxScale: 2.5,
-                        child: ExtendedImage.network(
-                          myPokemon.sprites.other.officialArtwork.frontDefault,
-                          width: getScreenWidth(context) * .7,
-                        ),
-                      ),
                     ),
                     Container(
                       margin: const EdgeInsets.symmetric(
