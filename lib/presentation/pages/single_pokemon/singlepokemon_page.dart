@@ -2,9 +2,7 @@ import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
-import 'package:unibg_pokemon/data/enums/colortype_enum.dart';
 import 'package:unibg_pokemon/data/models/pokemon.dart';
-import 'package:unibg_pokemon/presentation/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
 import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/presentation/styles/dimens.dart';
@@ -54,7 +52,6 @@ class SinglePokemonPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    ImagesRow(myPokemon: myPokemon),
                     Container(
                       margin: const EdgeInsets.symmetric(
                         vertical: Dimens.mainSpace,
@@ -70,37 +67,6 @@ class SinglePokemonPage extends StatelessWidget {
                         icon: const Icon(Icons.smart_toy),
                         label: const Text("Ask AI"),
                       ),
-                    ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      spacing: Dimens.smallSpace,
-                      children: [
-                        ...myPokemon.types.map(
-                          (type) => Chip(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(
-                                Dimens.hugeRoundedCorner,
-                              ),
-                              side: BorderSide(
-                                color: hexToColor(
-                                    ColorType.fromName(type.type.name).color),
-                              ),
-                            ),
-                            label: Text(type.type.name.capitalize()),
-                            backgroundColor: hexToColor(
-                                ColorType.fromName(type.type.name).color),
-                            labelStyle: const TextStyle(
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                        Spacer(),
-                        Text(
-                          "#${myPokemon.id.toString()}",
-                          style: textTheme.headlineMedium,
-                        ),
-                      ],
                     ),
                   ],
                 ),
