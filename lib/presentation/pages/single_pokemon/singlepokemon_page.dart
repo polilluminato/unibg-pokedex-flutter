@@ -1,4 +1,3 @@
-import 'package:audioplayers/audioplayers.dart';
 import 'package:extended_image/extended_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -14,14 +13,9 @@ import 'package:unibg_pokemon/utils/string_extensions.dart';
 import 'package:unibg_pokemon/utils/utils.dart';
 
 class SinglePokemonPage extends StatelessWidget {
-  SinglePokemonPage({super.key, required this.pokemonId});
+  const SinglePokemonPage({super.key, required this.pokemonId});
 
   final int pokemonId;
-  final AudioPlayer _player = AudioPlayer();
-
-  void _playAudio(String url) async {
-    _player.play(UrlSource(url));
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -128,27 +122,6 @@ class SinglePokemonPage extends StatelessWidget {
                           ),
                         );
                       },
-                    ),
-                    const CustomDivider(),
-                    Row(
-                      children: [
-                        Text(
-                          "Audio",
-                          style: textTheme.titleLarge,
-                        ),
-                        const Spacer(),
-                        FilledButton.icon(
-                          onPressed: () => _playAudio(myPokemon.cries.legacy),
-                          icon: const Icon(Icons.audiotrack),
-                          label: const Text("Legacy"),
-                        ),
-                        gapW(Dimens.mainSpace),
-                        FilledButton.icon(
-                          onPressed: () => _playAudio(myPokemon.cries.latest),
-                          icon: const Icon(Icons.audiotrack),
-                          label: const Text("Latest"),
-                        ),
-                      ],
                     ),
                   ],
                 ),
