@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:unibg_pokemon/data/models/pokemon.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_description_page.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_opponent_page.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/pokemon_team_page.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 
@@ -32,74 +29,7 @@ Future<void> modalAIView({
             child: Column(
               spacing: Dimens.smallSpace,
               mainAxisSize: MainAxisSize.min,
-              children: [
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(56),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PokemonDescriptionPage(
-                          pokemonName: pokemon.name,
-                        ),
-                      ),
-                    );
-                  },
-                  child: const Text('Description'),
-                ),
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(56),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PokemonOpponentPage(
-                          pokemonName: pokemon.name,
-                          isUp: true,
-                        ),
-                      ),
-                    );
-                  },
-                  child: const Text('Pokémon Advantage'),
-                ),
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(56),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PokemonOpponentPage(
-                          pokemonName: pokemon.name,
-                          isUp: false,
-                        ),
-                      ),
-                    );
-                  },
-                  child: const Text('Pokémon Disadvantage'),
-                ),
-                FilledButton(
-                  style: FilledButton.styleFrom(
-                    minimumSize: const Size.fromHeight(56),
-                  ),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => PokemonTeamPage(
-                          pokemonName: pokemon.name,
-                        ),
-                      ),
-                    );
-                  },
-                  child: const Text('Team'),
-                ),
-              ],
+              children: [],
             ),
           ),
         ),

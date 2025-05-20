@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:unibg_pokemon/data/models/pokemon.dart';
-import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
 import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
 import 'package:unibg_pokemon/presentation/styles/dimens.dart';
 import 'package:unibg_pokemon/utils/string_extensions.dart';
@@ -39,22 +38,6 @@ class SinglePokemonPage extends StatelessWidget {
                         myPokemon.name.capitalize(),
                         style: textTheme.displaySmall,
                       ).animate().scale(),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.symmetric(
-                        vertical: Dimens.mainSpace,
-                      ),
-                      child: FilledButton.icon(
-                        style: FilledButton.styleFrom(
-                          minimumSize: const Size.fromHeight(56),
-                        ),
-                        onPressed: () => modalAIView(
-                          context: context,
-                          pokemon: myPokemon,
-                        ),
-                        icon: const Icon(Icons.smart_toy),
-                        label: const Text("Ask AI"),
-                      ),
                     ),
                   ],
                 ),
