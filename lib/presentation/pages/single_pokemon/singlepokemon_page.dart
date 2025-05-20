@@ -4,7 +4,6 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:pinch_zoom/pinch_zoom.dart';
 import 'package:unibg_pokemon/data/enums/colortype_enum.dart';
 import 'package:unibg_pokemon/data/models/pokemon.dart';
-import 'package:unibg_pokemon/presentation/pages/home/ui/divider_view.dart';
 import 'package:unibg_pokemon/presentation/pages/home/ui/images_row.dart';
 import 'package:unibg_pokemon/presentation/pages/single_pokemon/ui/modal_ai_view.dart';
 import 'package:unibg_pokemon/data/repository/pokemon_repository.dart';
@@ -102,26 +101,6 @@ class SinglePokemonPage extends StatelessWidget {
                           style: textTheme.headlineMedium,
                         ),
                       ],
-                    ),
-                    const CustomDivider(),
-                    ListView.builder(
-                      shrinkWrap: true,
-                      itemCount: myPokemon.stats.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          contentPadding: EdgeInsets.zero,
-                          title: Text(
-                            myPokemon.stats[index].stat.name
-                                .capitalize()
-                                .replaceAll("-", " "),
-                            style: textTheme.titleLarge,
-                          ),
-                          trailing: Text(
-                            myPokemon.stats[index].baseStat.toString(),
-                            style: textTheme.titleLarge,
-                          ),
-                        );
-                      },
                     ),
                   ],
                 ),
