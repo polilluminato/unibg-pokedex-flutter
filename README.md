@@ -39,7 +39,7 @@ dart run build_runner build --delete-conflicting-outputs
 
 ## 🎞️ Video Demo
 
-<video controls src="https://github.com/polilluminato/unibg-pokedex-flutter/blob/main/.github/video/video-sample.mp4" title="Video Demo"></video>
+https://github.com/user-attachments/assets/2428eae9-3012-479e-aba3-06477f68f416
 
 ## 📱 Screenshots
 
