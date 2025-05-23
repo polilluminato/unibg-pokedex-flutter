@@ -14,7 +14,7 @@
 
 This repository contains the source code of the demo [Pokédex](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#Pok%C3%A9dex) (ポケモン図鑑, Pokémon Zukan, lit.: Pokémon Encyclopedia) application that I made for the lecture given for the [Scuola di Ingegneria](https://www.unibg.it/embed-ingegneria/strutture-scuola-ingegneria) at the [University of Bergamo](https://www.unibg.it/). The application allows users to view the first 151 Pokémon in both list and grid format, navigate to their dedicated page, and view statistics.
 
-* [UniBG Pokédex with Flutter slides](./docs/slides.pdf).
+* [UniBG Pokédex with Flutter slides](./docs/slides.pdf)
 * Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.it/polilluminato/pokedex/)
 
 ## 📦 Packages
@@ -23,9 +23,8 @@ Here are the most interesting packages used in the development of the applicatio
 
 * [audioplayers](https://pub.dev/packages/audioplayers): A Flutter plugin to play multiple audio files simultaneously
 * [flutter_animate](https://pub.dev/packages/flutter_animate): Add beautiful animated effects & builders in Flutter, via an easy, customizable, unified API
-* (DISCONTINUED)[palette_generator](https://pub.dev/packages/palette_generator): Flutter package for generating palette colors from a source image
+* [palette_generator](https://pub.dev/packages/palette_generator)(DISCONTINUED): Flutter package for generating palette colors from a source image
 * [pinch_zoom](https://pub.dev/packages/pinch_zoom): A widget based on Flutter's new Interactive Viewer that makes picture pinch zoom, and return to its initial size and position when released
-* [window_manager](https://pub.dev/packages/window_manager): This plugin allows Flutter desktop apps to resizing and repositioning the window
 * [wolt_modal_sheet](https://pub.dev/packages/wolt_modal_sheet): This package provides a responsive modal with multiple pages, motion animation for page transitions, and scrollable content within each page
 
 ## 🛠 Compile
