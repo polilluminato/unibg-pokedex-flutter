@@ -14,9 +14,8 @@
 
 This repository contains the source code of the demo [Pokédex](https://en.wikipedia.org/wiki/Gameplay_of_Pok%C3%A9mon#Pok%C3%A9dex) (ポケモン図鑑, Pokémon Zukan, lit.: Pokémon Encyclopedia) application that I made for the lecture given for the [Scuola di Ingegneria](https://www.unibg.it/embed-ingegneria/strutture-scuola-ingegneria) at the [University of Bergamo](https://www.unibg.it/). The application allows users to view the first 151 Pokémon in both list and grid format, navigate to their dedicated page, and view statistics.
 
-The [Flutter - Pokédex - UniBG](https://docs.google.com/presentation/d/1nJvaS6JzNPdh6aU2XAQoXEWMFffXNeyaAxlFsQpOcBI/edit?usp=sharing) slides can be found here.
-
-Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.it/polilluminato/pokedex/)
+* [UniBG Pokédex with Flutter slides](./docs/slides.pdf).
+* Moodboard for the UI of the app: [Pokédex on Pinterest](https://www.pinterest.it/polilluminato/pokedex/)
 
 ## 📦 Packages
 
